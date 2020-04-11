@@ -1,9 +1,14 @@
-/*const Img = require('../model/Img')*/
+const { con, table } = require('../model/Img')
 
 module.exports = {
   async index(req, res) {
-    /* Need add get connection with database mysql and Model */
-    return res.json(m);
+    await con.query(
+      "SELECT * FROM " + table,
+      (err, result, fields) => {
+        if (err) throw err;
+        return res.json(result);
+      }
+    );
   },
 
   show(req, res) {
