@@ -5,10 +5,10 @@ const Carousel = () => {
 
     const styles = {
         imgItem: {
-            paddingTop: '5px', 
+            paddingTop: '1px', 
             height: '450px'
         },
-        imgInterval: 500
+        imgInterval: 3000
     }
 
     return (
