@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Home from './components/Home'
+import Home from './views/Home'
 import * as serviceWorker from './serviceWorker';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 

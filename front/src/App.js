@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBar from './views/NavBar'
+import NavBar from './components/NavBar'
 import './styles.css';
 
 function App({ children }) {

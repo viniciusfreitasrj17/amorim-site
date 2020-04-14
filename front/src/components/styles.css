@@ -1,0 +1,21 @@
+/* Carousel */ 
+img.carousel-itemImg {
+    padding-top: 5px;
+    height: 450px;
+}
+
+/* Services */
+section.services-container {
+    /* border: 1px solid #000; */
+    border: 5px solid #0573b7;
+    margin: 15px auto;
+    padding: 50px 0;
+    background-color: #b2ddf7;
+}
+
+div.services-itens {
+    /* background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2); */
+    margin: auto;
+    text-align: center;
+}
