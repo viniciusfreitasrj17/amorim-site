@@ -6,11 +6,11 @@ const Carousel = () => {
     const state = {
         imgInterval: 3000,
         imgSrc: [
-            'https://www.casadebateriasoliveira.com.br/imagens/banner-home/banner-3.jpg',
-            'http://transnatural.com.br/img/slider/slide11.jpg',
-            'http://transnatural.com.br/img/slider/slide14.jpg',
-            'http://transnatural.com.br/img/slider/slide15.jpg',
-            'https://i.pinimg.com/564x/d9/5b/c0/d95bc01ce95cee37bf12eab8051f73c9.jpg'
+            'https://media.semprefamilia.com.br/semprefamilia/2019/11/humildade-em-familia-620x349-61b59400.png',
+            'https://lh3.googleusercontent.com/proxy/MHxGxVvcuUf1UJeqFGVAiNIWAFZzHWUWMqEaUESZTW3HypIX8lr8fKSk-fnXNSLuzNRQfZmG8ULMdr5xlXOztKVcZln9be9aDngtSn4YiActu85mumjXL8_0Yy3WxgwDSEWbEw3Mki20iTz3tJj4tTPm',
+            'https://i.pinimg.com/originals/56/ee/7f/56ee7f155e22cd1394616e0d4ef8a98d.jpg',
+            'https://media.semprefamilia.com.br/semprefamilia/2019/11/humildade-em-familia-620x349-61b59400.png',
+            'https://i.pinimg.com/originals/56/ee/7f/56ee7f155e22cd1394616e0d4ef8a98d.jpg'
         ]
     }
 
