@@ -21,3 +21,14 @@ div.services-itens {
 }
 
 /* Partners */
+
+h3.partners-itens {
+  color: #FFF;
+  font-size: 20px;
+}
+
+img.partners-slide {
+  max-width: 250px;
+  height: 150px;
+  margin: 0 auto;
+}

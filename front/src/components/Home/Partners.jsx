@@ -1,31 +1,69 @@
 import React from 'react';
 
 import '../styles.css'
-import '../../util/slick/slick.css';
-import '../../util/slick/slick-theme.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
 
 const Partners = () => {
-  const renderSlides = () =>
-    [1, 2, 3, 4, 5, 6, 7, 8].map(num => (
-      <div className='App'>
-        <h3>Slide {num}</h3>
-      </div>
-    ));
+  const settings = {
+      dots: true,
+      infinite: true,
+      speed: 700,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false
+      // accessibility: false
+    };
 
-  return (
-    <div className="App">
-      <Slider
-        dots={false}
-        slidesToShow={2}
-        slidesToScroll={2}
-        autoplay={true}
-        autoplaySpeed={3000}
-      >
-        {renderSlides()}
-      </Slider>
-    </div>
+  const state = {
+    imgSrc: [
+      'https://logodownload.org/wp-content/uploads/2016/08/Mercado-Livre-logo.png',
+      'https://marcas-logos.net/wp-content/uploads/2019/12/Heineken-Logo.png',
+      'https://marcas-logos.net/wp-content/uploads/2019/11/Spotify-Logo.png',
+      'https://pt.freelogodesign.org/Content/img/logo-samples/celtica.png',
+      'https://www.vintecontologos.com.br/wp-content/uploads/2017/08/Coca-Cola-Logo-600x282.png.webp',
+      'https://www.vintecontologos.com.br/wp-content/uploads/2017/08/logo-subway-600x172.png',
+      'https://marcas-logos.net/wp-content/uploads/2019/12/PayPal-Logo.png',
+      'https://logodownload.org/wp-content/uploads/2014/05/vale-logo-3.png',
+      'https://logodownload.org/wp-content/uploads/2018/08/aurora-logo-2.png'
+    ]
+  }
+    return (
+      <div className='container'>
+        <Slider {...settings}>
+         <div>
+           <img src={state.imgSrc[0]} className='partners-slide' />
+         </div>
+         <div>
+           <img src={state.imgSrc[1]} className='partners-slide' />
+         </div>
+         <div>
+           <img src={state.imgSrc[2]} className='partners-slide' />
+         </div>
+         <div>
+           <img src={state.imgSrc[3]} className='partners-slide' />
+         </div>
+         <div>
+           <img src={state.imgSrc[4]} className='partners-slide' />
+         </div>
+         <div>
+           <img src={state.imgSrc[5]} className='partners-slide' />
+         </div>
+         <div>
+           <img src={state.imgSrc[6]} className='partners-slide' />
+         </div>
+         <div>
+           <img src={state.imgSrc[7]} className='partners-slide' />
+         </div>
+         <div>
+           <img src={state.imgSrc[8]} className='partners-slide' />
+         </div>
+       </Slider>
+     </div>
   );
 };
 
