@@ -24,12 +24,16 @@ const Services = () => {
 
         <div className='services-itens col-md-6' >
           <div className='row'>
-            <div className="services-itens col-md-6">  <img style={state.imgSmallStyle} src={state.imgSrc[0]} />  </div>
-            <div className="services-itens col-md-6">  <img style={state.imgSmallStyle} src={state.imgSrc[0]} />  </div>
+            <div className="services-itens col-md-6"> <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> </div>
+            <div className="services-itens col-md-6"> <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> </div>
           </div>
           <div className='row'>
-            <div className="services-itens col-md-6">  <img style={state.imgSmallStyle} src={state.imgSrc[0]} />  </div>
-            <div className="services-itens col-md-6">  <img style={state.imgSmallStyle} src={state.imgSrc[0]} />  </div>
+            <div className="services-itens col-md-6 services-ghost"></div>
+            <div className="services-itens col-md-6 services-ghost"></div>
+          </div>
+          <div className='row'>
+            <div className="services-itens col-md-6"> <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> </div>
+            <div className="services-itens col-md-6"> <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> </div>
           </div>
         </div>
 

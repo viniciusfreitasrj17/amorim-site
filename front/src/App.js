@@ -1,12 +1,12 @@
 import React from 'react';
 
-import NavBar from './components/NavBar'
+import NavBarMenu from './components/NavBarMenu'
 import './styles.css';
 
 function App({ children }) {
   return (
     <div className="w-100">
-      <NavBar />
+      <NavBarMenu />
       {children}
     </div>
   );
