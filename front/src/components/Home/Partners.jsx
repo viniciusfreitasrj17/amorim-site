@@ -33,7 +33,8 @@ const Partners = () => {
     ]
   }
     return (
-      <div className='container'>
+      <section className='container partners-container'>
+        <h1 className='partners-title'>Conheça nossos Parceiros</h1>
         <Slider {...settings}>
          <div>
            <img src={state.imgSrc[0]} className='partners-slide' />
@@ -63,7 +64,7 @@ const Partners = () => {
            <img src={state.imgSrc[8]} className='partners-slide' />
          </div>
        </Slider>
-     </div>
+     </section>
   );
 };
 

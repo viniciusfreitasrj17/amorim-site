@@ -7,15 +7,15 @@ const Carousel = () => {
         imgInterval: 3000,
         imgSrc: [
             'https://media.semprefamilia.com.br/semprefamilia/2019/11/humildade-em-familia-620x349-61b59400.png',
-            'https://lh3.googleusercontent.com/proxy/MHxGxVvcuUf1UJeqFGVAiNIWAFZzHWUWMqEaUESZTW3HypIX8lr8fKSk-fnXNSLuzNRQfZmG8ULMdr5xlXOztKVcZln9be9aDngtSn4YiActu85mumjXL8_0Yy3WxgwDSEWbEw3Mki20iTz3tJj4tTPm',
             'https://i.pinimg.com/originals/56/ee/7f/56ee7f155e22cd1394616e0d4ef8a98d.jpg',
-            'https://media.semprefamilia.com.br/semprefamilia/2019/11/humildade-em-familia-620x349-61b59400.png',
+            'https://www.expositorcristao.com.br/content/interfaces/cms/userfiles/files/familia-ec.jpg',
+            'https://abrilveja.files.wordpress.com/2017/06/istock-grupo-idosos.jpg',
             'https://i.pinimg.com/originals/56/ee/7f/56ee7f155e22cd1394616e0d4ef8a98d.jpg'
         ]
     }
 
     return (
-        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+        <section id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -68,7 +68,7 @@ const Carousel = () => {
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="sr-only">Next</span>
             </a>
-        </div>
+        </section>
     );
 }
 
