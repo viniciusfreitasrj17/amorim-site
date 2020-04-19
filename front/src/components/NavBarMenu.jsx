@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 
 import './styles.css'
 
-const NavBar = () => {
+const NavBarMenu = () => {
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark navbar-styles">
+    <nav className="navbar navbar-expand-lg navbar-dark navbar-styles" id='navbarmenu'>
       <a class="navbar-brand" href="#">
         <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="" />
         Bootstrap
@@ -18,7 +19,7 @@ const NavBar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
-        <a className="nav-link" href="#">Início<span className="sr-only">(current)</span></a>
+        <Link className="nav-link" to="navbarmenu" smooth={true} duration={1000} >Início<span className="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">Serviços</a>
@@ -30,7 +31,7 @@ const NavBar = () => {
         <a className="nav-link" href="#">Sobre</a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Contato</a>
+        <Link className="nav-link" to="contact" smooth={true} duration={1000} >Contato</Link>
       </li>
     </ul>
     </div>
@@ -38,4 +39,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavBarMenu;
