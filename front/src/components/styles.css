@@ -6,6 +6,10 @@ nav.navbar-styles {
   opacity: 0.7;
 }
 
+li.navbar-link-a:hover {
+  cursor: pointer;
+}
+
 /* Carousel */
 img.carousel-itemImg {
     padding-top: 0px;
@@ -69,7 +73,7 @@ section.about-container {
 
 section.contact-container {
   margin-top: 50px;
-  padding: 70px 0;
+  padding: 42px 0;
   font-size: 0.9rem;
 }
 

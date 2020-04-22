@@ -18,7 +18,7 @@ const Services = () => {
   }
 
   return (
-    <section className='services-container container' >
+    <section className='services-container container' id='services'>
       <div className='row' >
         <div className="services-itens col-md-6"> <img style={state.imgBigStyle} src={state.imgSrc[0]} /> </div>
 

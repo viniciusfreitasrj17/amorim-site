@@ -18,19 +18,19 @@ const NavBarMenu = () => {
 
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
-      <li className="nav-item active">
+      <li className="nav-item navbar-link-a active">
         <Link className="nav-link" to="navbarmenu" smooth={true} duration={1000} >Início<span className="sr-only">(current)</span></Link>
       </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Serviços</a>
+      <li className="nav-item navbar-link-a">
+        <Link className="nav-link" to="services" smooth={true} duration={1000}>Serviços</Link>
       </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Parceiros</a>
+      <li className="nav-item navbar-link-a">
+        <Link className="nav-link" to="partners" smooth={true} duration={1000}>Parceiros</Link>
       </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Sobre</a>
+      <li className="nav-item navbar-link-a">
+        <Link className="nav-link" to="about" smooth={true} duration={1000}>Sobre</Link>
       </li>
-      <li className="nav-item">
+      <li className="nav-item navbar-link-a">
         <Link className="nav-link" to="contact" smooth={true} duration={1000} >Contato</Link>
       </li>
     </ul>
