@@ -1,9 +1,19 @@
+/* Default */
+
+.vh-100{
+  height: 100vh;
+}
+
 /* NavBar */
 
 nav.navbar-styles {
   background-color: #191c17;
   color: #e8e8e8;
   opacity: 0.7;
+}
+
+ul.navbar-ul-liks {
+  justify-content: left;
 }
 
 li.navbar-link-a:hover {
@@ -13,7 +23,11 @@ li.navbar-link-a:hover {
 /* Carousel */
 img.carousel-itemImg {
     padding-top: 0px;
-    height: 700px;
+    /* max-height: 100%;
+    min-height: 100%; */
+    max-height: 650px;
+    height: 100%;
+    /* max-width: 100%; */
 }
 
 /* Services */

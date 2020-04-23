@@ -33,7 +33,7 @@ const Partners = () => {
     ]
   }
     return (
-      <section className='container partners-container' id='partners'>
+      <section className='container partners-container vh-100' id='partners'>
         <h1 className='partners-title'>Conheça nossos Parceiros</h1>
         <Slider {...settings}>
          <div>
