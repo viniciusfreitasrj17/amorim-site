@@ -20,6 +20,28 @@ li.navbar-link-a:hover {
   cursor: pointer;
 }
 
+/* ArrowUp */
+
+.arrowUp {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  cursor: pointer;
+  padding: 12.5px;
+  background: #fff
+  /* visibility: hidden; */
+}
+
+.arrowUp img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  /* visibility: visible; */
+}
+
 /* Carousel */
 img.carousel-itemImg {
     padding-top: 0px;
@@ -33,21 +55,25 @@ img.carousel-itemImg {
 /* Services */
 section.services-container {
     /* border: 1px solid #000; */
-    border: 5px solid #969696;
-    margin: 30px auto;
-    padding: 50px 0;
-    background-color: #eae8e8;
+  border: 5px solid #969696;
+  margin: 30px auto;
+  padding: 5% 0;
+  background-color: #eae8e8;
 }
 
 div.services-itens {
     /* background-color: rgba(86,61,124,.15);
     border: 1px solid rgba(86,61,124,.2); */
-    margin: auto;
-    text-align: center;
+  margin: auto;
+  text-align: center;
+}
+
+div.service-itens-group {
+  padding: 10% 15%;
 }
 
 div.services-ghost {
-  height: 3em;
+  height: 2em;
 }
 
 /* Partners */
@@ -86,13 +112,15 @@ section.about-container {
 /* Contact */
 
 section.contact-container {
-  margin-top: 50px;
-  padding: 42px 0;
+  margin-top: 0px;
   font-size: 0.9rem;
 }
 
 form.contact-form {
-  margin: 0 auto;
+  margin: 0 auto; 
+  border-radius: 15px;
+  background-color: #4c4646;
+  padding: 3%;
 }
 
 h1.contact-title {
@@ -105,4 +133,167 @@ h1.contact-title {
 label.contact-label {
   color: #FFF;
   opacity: 0.7;
+}
+
+div.contact-form-group {
+  margin-bottom: 0.5rem;
+}
+
+
+/* Rescursive */
+
+/* Extra small devices (portrait phones, less than 576px) ********/
+@media (max-width: 575.98px) { 
+  section.contact-cont-center {
+    padding: 3% 0;
+  }
+
+  label.contact-label {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 2.5px;
+  }
+
+  h1.contact-title {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 4.5px;
+    font-size: 2rem;
+  }
+
+  form.contact-form {
+    margin: 0 auto; 
+    border-radius: 15px;
+    background-color: #4c4646;
+    padding: 2%;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) ****************/
+@media (min-width: 576px) and (max-width: 767.98px) { 
+  section.contact-cont-center {
+    padding: 4% 0;
+  }
+
+  label.contact-label {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 2.5px;
+  }
+
+  h1.contact-title {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 4.5px;
+    font-size: 2rem;
+  }
+
+  form.contact-form {
+    margin: 0 auto; 
+    border-radius: 15px;
+    background-color: #4c4646;
+    padding: 2%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) ************************/
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.contact-cont-center {
+    padding: 3% 0;
+  }
+
+  label.contact-label {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 2.5px;
+  }
+
+  h1.contact-title {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 4.5px;
+    font-size: 2rem;
+  }
+
+  form.contact-form {
+    margin: 0 auto; 
+    border-radius: 15px;
+    background-color: #4c4646;
+    padding: 2%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) ************************/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  section.contact-cont-center {
+    padding: 1% 0;
+  }
+
+  label.contact-label {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 3px;
+  }
+
+  h1.contact-title {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 5px;
+    font-size: 2rem;
+  }
+
+  form.contact-form {
+    margin: 0 auto; 
+    border-radius: 15px;
+    background-color: #4c4646;
+    padding: 2.5%;
+  }
+}
+
+/* Large devices (Ipad X Pro) ************************/
+@media (min-width: 992px) and (max-width: 1199.98px) and (min-height: 1300px) {
+  section.contact-cont-center {
+    padding: calc(105% - 75%) 0;
+  }
+
+  label.contact-label {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 5px;
+  }
+
+  h1.contact-title {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 10px;
+    font-size: 2rem;
+  }
+
+  form.contact-form {
+    margin: 0 auto; 
+    border-radius: 15px;
+    background-color: #4c4646;
+    padding: 4%;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) ***********/ 
+@media (min-width: 1200px) and (min-height: 500px) {
+  section.contact-cont-center {
+    padding: 1% 0;
+  }
+
+  label.contact-label {
+    color: #FFF;
+    opacity: 0.7;
+    margin-bottom: 4px;
+  }
+
+  section.services-container {
+    /* border: 1px solid #000; */
+    border: 5px solid #969696;
+    margin: 30px auto;
+    padding: 25% 0;
+    background-color: #eae8e8;
+}
 }
