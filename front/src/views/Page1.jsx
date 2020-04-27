@@ -1,13 +1,9 @@
 import React from 'react';
 
 import { NavContainer, Logo, Toggle, NavItens, Item } from '../components/NavBar';
-import Carousel from '../components/Home/Carousel';
-import Services from '../components/Home/Services';
-import Partners from '../components/Home/Partners';
-import About from '../components/Home/About';
 import Contact from '../components/Home/Contact';
 
-const Home = () => {
+const Page1 = () => {
 
   return (
     <>
@@ -22,13 +18,14 @@ const Home = () => {
           <Item to={'contact'} content={'Contato'} />
         </NavItens>
       </NavContainer>
-      <Carousel />
-      <Services />
-      <Partners />
-      <About />
+
+      <section style={{height: '2000px'}} >
+        <h1>Content</h1>
+      </section>
+
       <Contact />
     </>
   );
-}
+};
 
-export default Home;
+export default Page1;

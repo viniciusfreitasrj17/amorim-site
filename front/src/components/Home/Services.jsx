@@ -20,20 +20,30 @@ const Services = () => {
   return (
     <section className='services-container container vh-100' id='services'>
       <div className='row' >
-        <div className="services-itens col-12 col-md-6"> <img style={state.imgBigStyle} src={state.imgSrc[0]} /> </div>
+        <div className="services-itens col-12 col-md-6"> 
+          <img style={state.imgBigStyle} src={state.imgSrc[0]} /> 
+        </div>
 
         <div className='services-itens col-12 col-md-6 service-itens-group' >
           <div className='row'>
-            <div className="services-itens col-6 col-md-6"> <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> </div>
-            <div className="services-itens col-6 col-md-6"> <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> </div>
+            <div className="services-itens col-6 col-md-6"> 
+              <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> 
+            </div>
+            <div className="services-itens col-6 col-md-6"> 
+              <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> 
+            </div>
           </div>
           <div className='row'>
             <div className="services-itens col-md-6 services-ghost"></div>
             <div className="services-itens col-md-6 services-ghost"></div>
           </div>
           <div className='row'>
-            <div className="services-itens col-6 col-md-6"> <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> </div>
-            <div className="services-itens col-6 col-md-6"> <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> </div>
+            <div className="services-itens col-6 col-md-6"> 
+              <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> 
+            </div>
+            <div className="services-itens col-6 col-md-6"> 
+              <h1 style={{ fontSize: '800%' }} >+</h1> 
+            </div>
           </div>
         </div>
 

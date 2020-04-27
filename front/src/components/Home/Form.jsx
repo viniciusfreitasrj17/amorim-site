@@ -34,7 +34,7 @@ const Form = ({ init, anim }) => {
         type: "spring",
         stiffness: 260,
         damping: 20,
-        scale: { duration: .8 },
+        // scale: { duration: .5 },
         opacity: { duration: .5 }
       }}
     > 

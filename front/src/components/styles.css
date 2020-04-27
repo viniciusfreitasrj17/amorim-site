@@ -288,12 +288,4 @@ div.contact-form-group {
     opacity: 0.7;
     margin-bottom: 4px;
   }
-
-  section.services-container {
-    /* border: 1px solid #000; */
-    border: 5px solid #969696;
-    margin: 30px auto;
-    padding: 25% 0;
-    background-color: #eae8e8;
-}
 }

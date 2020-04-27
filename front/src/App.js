@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import NavBarMenu from './components/NavBarMenu';
 import ArrowUp from './components/ArrowUp';
 import './styles.css';
 
@@ -55,7 +54,6 @@ function App({ children }) {
 
   return (
     <div className="w-100">
-      <NavBarMenu />
       {children}
       {el}
     </div>
