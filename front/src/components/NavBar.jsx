@@ -6,8 +6,7 @@ import '../styles.css'
 
 const NavContainer = ({ children }) => (
   <nav 
-    className="navbar navbar-expand-lg navbar-dark navbar-styles" 
-    id='navbar'
+    className="navbar navbar-expand-lg navbar-dark navbar-styles max-navbar" 
   >
     {children}
   </nav>
@@ -15,7 +14,7 @@ const NavContainer = ({ children }) => (
 
 const Logo = ({ content }) => (
   <a 
-    className="navbar-brand" 
+    className="navbar-brand max-navbar-logo navbar-logo" 
     onClick={() => hashHistory.push('/')} 
     style={{cursor: 'pointer'}} 
   >
@@ -25,7 +24,7 @@ const Logo = ({ content }) => (
 
 const Toggle = () => (
   <button
-    className="navbar-toggler"
+    className="navbar-toggler max-navbar-toggler navbar-toggler"
     type="button"
     data-toggle="collapse"
     data-target="#navbarSupportedContent"
@@ -38,7 +37,10 @@ const Toggle = () => (
 );
 
 const NavItens = ({ children }) => (
-  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+  <div 
+    className="collapse navbar-collapse max-navbar-group-itens navbar-group-itens" 
+    id="navbarSupportedContent"
+  >
     <ul className="navbar-nav mr-auto navbar-ul-liks">
       {children}
     </ul>
@@ -56,4 +58,8 @@ const Item = ({ to, content }) => {
   ) 
 };
 
-export { NavContainer, Logo, Toggle, NavItens, Item };
+const Ghost = () => (
+  <div id='navbar' className='navbar-ghost' />
+) 
+
+export { NavContainer, Logo, Toggle, NavItens, Item, Ghost };

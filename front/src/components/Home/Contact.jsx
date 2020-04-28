@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Form from './Form';
 
-const Contact = ({ heightHalf, heightOnPage }) => {
+const Contact = ({ heightOnPage }) => {
   const [isAnimated, setIsAnimated] = useState(0);
   const [el, setEl] = useState('');
 
-  console.log(heightOnPage[4])
+  // console.log(heightOnPage[4])
 
   useEffect(() => {
     window.addEventListener("scroll", handleElement, false);
     
     function handleElement() {
-      console.log(window.scrollY)
+      // console.log(window.scrollY)
 
       if (window.scrollY >= heightOnPage[4] && isAnimated !== 1) {
         setIsAnimated(1);
