@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import { hashHistory } from 'react-router';
 
@@ -46,10 +46,16 @@ const NavItens = ({ children }) => (
     </ul>
   </div>);
 
-const Item = ({ to, content }) => {
+const Item = ({ to, content, active }) => {
+  const [activeArea, setActiveArea] = useState('');
+
+  useEffect(() => {
+    setActiveArea((active === to) ? 'active' : '')
+  }, [window.scrollY])
+  
   return (
     <li 
-      className={`nav-item navbar-link-a ${to === 'navbar' ? 'active' : ''}`}
+      className={`nav-item navbar-link-a ${activeArea}`}
     >
       <Link className="nav-link" to={to} smooth={true} duration={1000} > 
         {content}

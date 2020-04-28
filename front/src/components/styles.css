@@ -27,7 +27,7 @@ nav.navbar-styles {
   top: 0px;
   left: 0px;
   width: 100%;
-  transition: all 0.4s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 nav.min-navbar {
@@ -45,7 +45,7 @@ nav.max-navbar {
 }
 
 a.navbar-logo {
-  transition: all 0.4s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 a.min-navbar-logo {
@@ -57,7 +57,7 @@ a.max-navbar-logo {
 }
 
 button.navbar-toggler {
-  transition: all 0.4s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 button.min-navbar-toggler {
@@ -69,7 +69,7 @@ button.max-navbar-toggler {
 }
 
 div.navbar-group-itens {
-  transition: all 0.4s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 div.min-navbar-group-itens {

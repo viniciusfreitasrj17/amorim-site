@@ -10,6 +10,7 @@ import Contact from '../components/Home/Contact';
 const Home = () => {
   const [lastYPod, setLastYPos] = useState(0);
   const [heightOnPage, setHeightOnPage] = useState([]);
+  const [active, setActive] = useState('');
 
   const c = ['navbar', 'carousel', 'services', 'partners', 'about', 'contact'];
 
@@ -42,14 +43,14 @@ const Home = () => {
 
   // useEffect NavBar
   useEffect(() => {
+
+    // Effect Size
     const $nav = document.querySelector('nav')
     const $logo = document.querySelectorAll('.navbar-logo')[0]
     const $toggler = document.querySelectorAll('.navbar-toggler')[0]
-    const $group = document.querySelectorAll('.navbar-group-itens')[0]
-
-    
-    window.addEventListener('scroll', toggleHeader, false)
-    function toggleHeader() {
+    const $group = document.querySelectorAll('.navbar-group-itens')[0]  
+    window.addEventListener('scroll', toggleNav, false)
+    function toggleNav() {
       if (window.pageYOffset > 98 && $nav.classList.contains('max-navbar')) {
         $nav.classList.remove('max-navbar')
         $nav.classList.add('min-navbar')
@@ -73,6 +74,16 @@ const Home = () => {
       }
     }
 
+    // Effect Link Active
+    function activeNav() {
+      heightOnPage.forEach((e, i) => {
+        if(window.scrollY > e) {
+          setActive(c[i + 1])
+        }
+      })
+    }
+
+    activeNav()
   }, [lastYPod])
 
   return (
@@ -81,11 +92,11 @@ const Home = () => {
         <Logo content={'Bootstrap'} />
         <Toggle />
         <NavItens>
-          <Item to={'navbar'} content={'Início'} />
-          <Item to={'services'} content={'Serviços'} />
-          <Item to={'partners'} content={'Parceiros'} />
-          <Item to={'about'} content={'Sobre'} />
-          <Item to={'contact'} content={'Contato'} />
+          <Item to={'carousel'} content={'Início'} active={active} />
+          <Item to={'services'} content={'Serviços'} active={active} />
+          <Item to={'partners'} content={'Parceiros'} active={ active} />
+          <Item to={'about'} content={'Sobre'} active={active} />
+          <Item to={'contact'} content={'Contato'} active={active} />
         </NavItens>
       </NavContainer>
       <Ghost />
