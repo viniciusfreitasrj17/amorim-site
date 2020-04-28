@@ -19,7 +19,11 @@ const Page1 = () => {
         </NavItens>
       </NavContainer>
 
-      <section style={{height: '2000px'}} >
+      <section style={{height: '370px'}} >
+        <h1>Intro</h1>
+      </section>
+
+      <section style={{height: '800px'}} >
         <h1>Content</h1>
       </section>
 
