@@ -89,7 +89,7 @@ const Home = () => {
   return (
     <>
       <NavContainer>
-        <Logo content={'Bootstrap'} />
+        <Logo content={'Amorim'} />
         <Toggle />
         <NavItens>
           <Item to={'carousel'} content={'Início'} active={active} />
@@ -104,7 +104,7 @@ const Home = () => {
       <Services />
       <Partners />
       <About />
-      <Contact heightOnPage={heightOnPage} />
+      <Contact heightOnPage={heightOnPage[4]} />
     </>
   );
 }

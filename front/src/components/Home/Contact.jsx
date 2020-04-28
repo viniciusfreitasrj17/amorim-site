@@ -13,11 +13,11 @@ const Contact = ({ heightOnPage }) => {
     function handleElement() {
       // console.log(window.scrollY)
 
-      if (window.scrollY >= heightOnPage[4] && isAnimated !== 1) {
+      if (window.scrollY >= heightOnPage && isAnimated !== 1) {
         setIsAnimated(1);
         // console.log({ True: isAnimated})
         setEl(<Form init={0} anim={1} />)
-      } else if (window.scrollY < heightOnPage[4] && isAnimated == 1) {
+      } else if (window.scrollY < heightOnPage && isAnimated == 1) {
         setIsAnimated(0);
         // console.log({ False: isAnimated})
         setEl(<Form init={1} anim={0} />)

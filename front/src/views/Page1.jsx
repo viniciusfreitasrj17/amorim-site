@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { NavContainer, Logo, Toggle, NavItens, Item } from '../components/NavBar';
+import { NavContainer, Logo, Toggle, NavItens, Item, Ghost } from '../components/NavBar';
 import Contact from '../components/Home/Contact';
 
 const Page1 = () => {
@@ -8,7 +8,7 @@ const Page1 = () => {
   const [heightOnPage, setHeightOnPage] = useState([]);
   const [active, setActive] = useState('');
 
-  const c = ['navbar', 'carousel', 'services', 'partners', 'about', 'contact'];
+  const c = ['navbar', 'intro', 'content', 'contact'];
 
   // useEffect get height components
   useEffect(() => {
@@ -85,7 +85,7 @@ const Page1 = () => {
   return (
     <>
       <NavContainer>
-        <Logo content={'Bootstrap'} />
+        <Logo content={'Amorim'} />
         <Toggle />
         <NavItens>
           <Item to={'navbar'} content={'Início'} active={active} />
@@ -93,16 +93,17 @@ const Page1 = () => {
           <Item to={'contact'} content={'Contato'} active={active} />
         </NavItens>
       </NavContainer>
+      <Ghost />
 
       <section id='intro' style={{height: '370px'}} >
-        <h1>Intro</h1>
+        <h1 style={{color: '#fff'}} >Intro</h1>
       </section>
 
       <section id='content' style={{height: '800px'}} >
-        <h1>Content</h1>
+        <h1 style={{color: '#fff'}} >Content</h1>
       </section>
 
-      <Contact />
+      <Contact heightOnPage={heightOnPage[2]} />
     </>
   );
 };

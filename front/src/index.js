@@ -1,20 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+
 import App from './App';
 import Home from './views/Home'
 import Page1 from './views/Page1';
+import Page2 from './views/Page2';
+import Page3 from './views/Page3';
+import Page4 from './views/Page4';
+import PageX from './views/PageX';
+
 import * as serviceWorker from './serviceWorker';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 ReactDOM.render(
   <Router history={hashHistory} >
     <Route path='/' component={App} >
       <IndexRoute component={Home} />
       <Route path='/page1' component={Page1} />
-      <Route path='/page2' component={() => (<h1>page2</h1>)} />
-      <Route path='/page3' component={() => (<h1>page3</h1>)} />
-      <Route path='/page4' component={() => (<h1>page4</h1>)} />
-      <Route path='/pagex' component={() => (<h1>pagex</h1>)} />
+      <Route path='/page2' component={Page2} />
+      <Route path='/page3' component={Page3} />
+      <Route path='/page4' component={Page4} />
+      <Route path='/pagex' component={PageX} />
     </Route>
   </Router>
   ,
