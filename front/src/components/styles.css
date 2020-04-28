@@ -7,7 +7,7 @@
 /* NavBar */
 
 div.navbar-ghost {
-  height: 98px;
+  height: 76px;
   width: 100%;
   /* background-color: #000; */
   opacity: 0;
@@ -41,7 +41,7 @@ nav.max-navbar {
   background-color: #191c17;
   color: #e8e8e8;
   opacity: 1;
-  padding: 1.5% 1.5%;
+  padding: .7% .7%;
 }
 
 a.navbar-logo {
@@ -136,11 +136,21 @@ div.services-ghost {
   height: 2em;
 }
 
+img.services-img-big {
+  max-width: 70%;
+  height: auto;
+}
+
+img.services-img-small {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Partners */
 
 section.partners-container {
-  margin-top: 70px;
-  margin-bottom: 70px;
+  padding-top: 15%;
+  /* margin-bottom: 70px; */
 }
 
 h3.partners-itens {

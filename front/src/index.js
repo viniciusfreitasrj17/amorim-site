@@ -13,6 +13,8 @@ ReactDOM.render(
       <Route path='/page1' component={Page1} />
       <Route path='/page2' component={() => (<h1>page2</h1>)} />
       <Route path='/page3' component={() => (<h1>page3</h1>)} />
+      <Route path='/page4' component={() => (<h1>page4</h1>)} />
+      <Route path='/pagex' component={() => (<h1>pagex</h1>)} />
     </Route>
   </Router>
   ,

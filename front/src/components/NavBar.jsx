@@ -57,7 +57,14 @@ const Item = ({ to, content, active }) => {
     <li 
       className={`nav-item navbar-link-a ${activeArea}`}
     >
-      <Link className="nav-link" to={to} smooth={true} duration={1000} > 
+      <Link 
+        className="nav-link" 
+        data-toggle="collapse" 
+        data-target=".navbar-collapse.show" 
+        to={to} 
+        smooth={true} 
+        duration={1000} 
+      > 
         {content}
       </Link>
     </li>

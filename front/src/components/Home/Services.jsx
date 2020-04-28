@@ -1,19 +1,16 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 
 import '../styles.css'
 
 const Services = () => {
   const state = {
-    imgSrc: [
-      'https://img.elo7.com.br/product/zoom/B65B02/quadro-decorativo-outono-laranja-quadro-floral.jpg'
-    ],
-    imgBigStyle: {
-      width: '250px',
-      height: '250px',
-    },
-    imgSmallStyle: {
-      width: '100px',
-      height: '100px',
+    imgSrc: {
+      one: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/NYCS-bull-trans-1.svg/1200px-NYCS-bull-trans-1.svg.png',
+      two: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/NYCS-bull-trans-2.svg/1200px-NYCS-bull-trans-2.svg.png',
+      tree: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NYCS-bull-trans-3.svg/1200px-NYCS-bull-trans-3.svg.png',
+      four: 'https://www.p4photel.com/ws/red-rounded-with-number-4-hi.png',
+      ex: 'https://img.elo7.com.br/product/zoom/B65B02/quadro-decorativo-outono-laranja-quadro-floral.jpg'
     }
   }
 
@@ -21,16 +18,22 @@ const Services = () => {
     <section className='services-container container vh-100' id='services'>
       <div className='row' >
         <div className="services-itens col-12 col-md-6"> 
-          <img style={state.imgBigStyle} src={state.imgSrc[0]} /> 
+          <button onClick={() => hashHistory.push('/page1')} >
+          <img className='services-img-big' src={state.imgSrc.one} /> 
+          </button>
         </div>
 
         <div className='services-itens col-12 col-md-6 service-itens-group' >
           <div className='row'>
             <div className="services-itens col-6 col-md-6"> 
-              <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> 
+              <button onClick={() => hashHistory.push('/page2')} >
+              <img className='services-img-small' src={state.imgSrc.two} /> 
+              </button>
             </div>
             <div className="services-itens col-6 col-md-6"> 
-              <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> 
+              <button onClick={() => hashHistory.push('/page3')} >
+              <img className='services-img-small' src={state.imgSrc.tree} /> 
+              </button>
             </div>
           </div>
           <div className='row'>
@@ -39,10 +42,14 @@ const Services = () => {
           </div>
           <div className='row'>
             <div className="services-itens col-6 col-md-6"> 
-              <img style={state.imgSmallStyle} src={state.imgSrc[0]} /> 
+              <button onClick={() => hashHistory.push('/page4')} >
+              <img className='services-img-small' src={state.imgSrc.four} /> 
+              </button>
             </div>
             <div className="services-itens col-6 col-md-6"> 
+              <button onClick={() => hashHistory.push('/pagex')} >
               <h1 style={{ fontSize: '800%' }} >+</h1> 
+              </button>
             </div>
           </div>
         </div>
