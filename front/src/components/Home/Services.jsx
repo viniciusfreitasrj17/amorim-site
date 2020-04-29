@@ -1,6 +1,7 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 
+import More from '../../images/home/mais.png';
 import '../styles.css'
 
 const Services = () => {
@@ -17,22 +18,22 @@ const Services = () => {
   return (
     <section className='services-container container vh-100' id='services'>
       <div className='row' >
-        <div className="services-itens col-12 col-md-6"> 
-          <button onClick={() => hashHistory.push('/page1')} >
-          <img className='services-img-big' src={state.imgSrc.one} /> 
+        <div className="services-itens col-12 col-md-5"> 
+          <button className='services-link-img' onClick={() => hashHistory.push('/page1')} >
+            <img className='services-img-big' src={state.imgSrc.one} /> 
           </button>
         </div>
 
-        <div className='services-itens col-12 col-md-6 service-itens-group' >
+        <div className='services-itens col-12 col-md-7 service-itens-group' >
           <div className='row'>
             <div className="services-itens col-6 col-md-6"> 
-              <button onClick={() => hashHistory.push('/page2')} >
-              <img className='services-img-small' src={state.imgSrc.two} /> 
+              <button className='services-link-img' onClick={() => hashHistory.push('/page2')} >
+                <img className='services-img-small' src={state.imgSrc.two} /> 
               </button>
             </div>
             <div className="services-itens col-6 col-md-6"> 
-              <button onClick={() => hashHistory.push('/page3')} >
-              <img className='services-img-small' src={state.imgSrc.tree} /> 
+              <button className='services-link-img' onClick={() => hashHistory.push('/page3')} >
+                <img className='services-img-small' src={state.imgSrc.tree} /> 
               </button>
             </div>
           </div>
@@ -42,13 +43,13 @@ const Services = () => {
           </div>
           <div className='row'>
             <div className="services-itens col-6 col-md-6"> 
-              <button onClick={() => hashHistory.push('/page4')} >
-              <img className='services-img-small' src={state.imgSrc.four} /> 
+              <button className='services-link-img' onClick={() => hashHistory.push('/page4')} >
+                <img className='services-img-small' src={state.imgSrc.four} /> 
               </button>
             </div>
             <div className="services-itens col-6 col-md-6"> 
-              <button onClick={() => hashHistory.push('/pagex')} >
-              <h1 style={{ fontSize: '800%' }} >+</h1> 
+              <button className='services-link-img' onClick={() => hashHistory.push('/pagex')} >
+              <img className='services-img-small' src={More} />   
               </button>
             </div>
           </div>
