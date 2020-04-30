@@ -115,16 +115,31 @@ img.carousel-itemImg {
 
 /* Services */
 section.services-container {
-    /* border: 1px solid #000; */
-  border: 5px solid #969696;
-  margin: 30px auto;
-  padding: 5% 0;
-  background-color: #eae8e8;
+  margin: 5% auto;
+  height: 100vh;
+
+  /* The image used */
+  background-image: url("../images//home/Future-business-21117.jpeg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .8;
+  
+  /* Position Itens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 div.services-itens {
-    /* background-color: rgba(86,61,124,.15);
-    border: 1px solid rgba(86,61,124,.2); */
+  /*background-color: rgba(86,61,124,.15);
+  border: 1px solid rgba(86,61,124,.2); */
   margin: auto;
   text-align: center;
 }
@@ -142,6 +157,7 @@ button.services-link-img {
   box-shadow: 2px 2px 3px #999;
   margin-left: 3%;
   padding: 3%;
+  background-color: transparent;
 }
 
 div.services-ghost {
