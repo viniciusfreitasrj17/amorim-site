@@ -115,7 +115,7 @@ img.carousel-itemImg {
 
 /* Services */
 section.services-container {
-  margin: 5% auto;
+  /* margin: 5% auto; */
   height: 100vh;
 
   /* The image used */
@@ -145,28 +145,41 @@ div.services-itens {
 }
 
 div.service-itens-group {
-  padding: 10% 15%;
+  /* padding: 10% 15%; */
 }
 
 button.services-link-img {
   border: 0;
   padding: 0;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   cursor: pointer;
   max-width: 100%;
   box-shadow: 2px 2px 3px #999;
-  margin-left: 3%;
-  padding: 3%;
-  background-color: transparent;
+  /* margin-left: 3%; */
+  /* padding: 3%; */
+  /* background-color: transparent; */
+}
+
+div.service-card-big {
+  width: 18rem;
+  transition: all .3s ease-out;
+}
+
+div.service-card-big:hover {
+  width: 20rem;
+}
+
+div.service-card-small {
+  width: 10rem;
+  transition: all .3s ease-out;
+}
+
+div.service-card-small:hover {
+  width: 12rem;
 }
 
 div.services-ghost {
-  height: 2em;
-}
-
-img.services-img-big {
-  max-width: 70%;
-  height: auto;
+  height: 4em;
 }
 
 img.services-img-small {
