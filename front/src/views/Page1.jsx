@@ -8,7 +8,11 @@ const Page1 = () => {
   const [heightOnPage, setHeightOnPage] = useState([]);
   const [active, setActive] = useState('');
 
-  const c = ['navbar', 'intro', 'content', 'contact'];
+  const c = ['carousel', 'content', 'contact'];
+
+  useEffect(() => {
+    return window.scrollTo(0, 0)
+  }, [])
 
   // useEffect get height components
   useEffect(() => {
@@ -44,7 +48,7 @@ const Page1 = () => {
     const $nav = document.querySelector('nav')
     const $logo = document.querySelectorAll('.navbar-logo')[0]
     const $toggler = document.querySelectorAll('.navbar-toggler')[0]
-    const $group = document.querySelectorAll('.navbar-group-itens')[0]  
+    const $group = document.querySelectorAll('.navbar-group-itens')[0]
     window.addEventListener('scroll', toggleNav, false)
     function toggleNav() {
       if (window.pageYOffset > 98 && $nav.classList.contains('max-navbar')) {
@@ -71,9 +75,11 @@ const Page1 = () => {
     }
 
     // Effect Link Active
+    setActive(c[0])
+
     function activeNav() {
       heightOnPage.forEach((e, i) => {
-        if(window.scrollY > e) {
+        if (window.scrollY > (e-300)) {
           setActive(c[i + 1])
         }
       })
@@ -88,19 +94,31 @@ const Page1 = () => {
         <Logo content={'Amorim'} />
         <Toggle />
         <NavItens>
-          <Item to={'navbar'} content={'Início'} active={active} />
+          <Item to={'carousel'} content={'Início'} active={active} />
           <Item to={'content'} content={'Galeria'} active={active} />
           <Item to={'contact'} content={'Contato'} active={active} />
         </NavItens>
       </NavContainer>
       <Ghost />
 
-      <section id='intro' style={{height: '370px'}} >
-        <h1 style={{color: '#fff'}} >Intro</h1>
+      <section id='carousel' style={{ width: '100%' }} >
+        <div className="" style={{
+              height: '300px', 
+              width: '100%', 
+              backgroundImage: 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3ZkLvg2p-eOyJvNi1y9z0Btj4dma-RJKDGSEtEcv7btt7uASu&usqp=CAU")',
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}>
+          <div className="">
+            <h5 style={{color: '#fff'}}>Hello</h5>
+            <p style={{color: '#fff'}}>World !!!</p>
+          </div>
+        </div>
       </section>
 
-      <section id='content' style={{height: '800px'}} >
-        <h1 style={{color: '#fff'}} >Content</h1>
+      <section id='content' style={{ height: '800px' }} >
+        <h1 style={{ color: '#fff' }} >Content</h1>
       </section>
 
       <Contact heightOnPage={heightOnPage[2]} />

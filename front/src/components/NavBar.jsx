@@ -6,7 +6,8 @@ import '../styles.css'
 
 const NavContainer = ({ children }) => (
   <nav 
-    className="navbar navbar-expand-lg navbar-dark navbar-styles max-navbar" 
+    className="navbar navbar-expand-lg navbar-dark navbar-styles max-navbar"
+    id='navbar' 
   >
     {children}
   </nav>
@@ -72,7 +73,7 @@ const Item = ({ to, content, active }) => {
 };
 
 const Ghost = () => (
-  <div id='navbar' className='navbar-ghost' />
+  <div className='navbar-ghost' />
 ) 
 
 export { NavContainer, Logo, Toggle, NavItens, Item, Ghost };

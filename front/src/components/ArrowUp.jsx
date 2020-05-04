@@ -33,7 +33,7 @@ const ArrowUp = ({init, anim}) => {
     > 
       <Link 
         className='arrowUp' 
-        to="navbar" 
+        to="carousel" 
         spy={true} 
         smooth={true} 
         offset={50} 

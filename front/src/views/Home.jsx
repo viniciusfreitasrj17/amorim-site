@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { NavContainer, Logo, Toggle, NavItens, Item, Ghost } from '../components/NavBar';
+import { NavContainer, Logo, Toggle, NavItens, Item } from '../components/NavBar';
 import Carousel from '../components/Home/Carousel';
 import Services from '../components/Home/Services';
 import Partners from '../components/Home/Partners';
@@ -12,7 +12,7 @@ const Home = () => {
   const [heightOnPage, setHeightOnPage] = useState([]);
   const [active, setActive] = useState('');
 
-  const c = ['navbar', 'carousel', 'services', 'partners', 'about', 'contact'];
+  const c = ['carousel', 'services', 'partners', 'about', 'contact'];
 
   // useEffect get height components
   useEffect(() => {
@@ -35,6 +35,8 @@ const Home = () => {
     })
 
     setHeightOnPage(hOnPage)
+    
+    // console.log(lastYPod, heightOnPage[3]-300)
 
     return () => {
       window.removeEventListener("scroll", Hand, false);
@@ -75,13 +77,17 @@ const Home = () => {
     }
 
     // Effect Link Active
+    setActive(c[0])
+
     function activeNav() {
       heightOnPage.forEach((e, i) => {
-        if(window.scrollY > e) {
+        if(window.scrollY > (e - 300)) {
           setActive(c[i + 1])
         }
       })
     }
+
+    // console.log(window.scrollY, heightOnPage)
 
     activeNav()
   }, [lastYPod])
@@ -94,17 +100,16 @@ const Home = () => {
         <NavItens>
           <Item to={'carousel'} content={'Início'} active={active} />
           <Item to={'services'} content={'Serviços'} active={active} />
-          <Item to={'partners'} content={'Parceiros'} active={ active} />
+          <Item to={'partners'} content={'Parceiros'} active={active} />
           <Item to={'about'} content={'Sobre'} active={active} />
           <Item to={'contact'} content={'Contato'} active={active} />
         </NavItens>
       </NavContainer>
-      <Ghost />
       <Carousel />
       <Services />
       <Partners />
       <About />
-      <Contact heightOnPage={heightOnPage[4]} />
+      <Contact heightOnPage={heightOnPage[3] - 300} />
     </>
   );
 }

@@ -16,7 +16,7 @@ const Services = () => {
   return (
     <section className='services-container container col-md-12' id='services'>
       <div className='row col-md-12' >
-        <div className="services-itens col-12 col-md-6">
+        <div className="services-itens col-12 col-md-6 service-img-mobile">
           <button className='services-link-img' onClick={() => hashHistory.push('/page1')} >
             <div className="card service-card-big" >
               <img className="card-img-top" src={imgSrc.get(1)} alt="Card image cap" />

@@ -10,6 +10,10 @@ const Page4 = () => {
 
   const c = ['navbar', 'intro', 'content', 'contact'];
 
+  useEffect(() => {
+    return window.scrollTo(0, 0)
+  }, [])
+
   // useEffect get height components
   useEffect(() => {
     function Hand() {
