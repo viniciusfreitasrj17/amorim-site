@@ -99,21 +99,24 @@ const Page1 = () => {
           <Item to={'contact'} content={'Contato'} active={active} />
         </NavItens>
       </NavContainer>
-      <Ghost />
 
       <section id='carousel' style={{ width: '100%' }} >
         <div className="" style={{
-              height: '300px', 
+              height: '30rem', 
               width: '100%', 
               backgroundImage: 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3ZkLvg2p-eOyJvNi1y9z0Btj4dma-RJKDGSEtEcv7btt7uASu&usqp=CAU")',
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
-              backgroundPosition: 'center'
+              backgroundPosition: 'center',
+              opacity: .7,
+
+              display: 'flex',
+              alignItems: 'flex-end',
+              justifyContent: 'center',
+              paddingBottom: '2%'
             }}>
-          <div className="">
-            <h5 style={{color: '#fff'}}>Hello</h5>
-            <p style={{color: '#fff'}}>World !!!</p>
-          </div>
+            <h5 style={{color: '#fff'}}>...</h5>
+            <h5 style={{color: '#fff'}}>...</h5>
         </div>
       </section>
 
@@ -121,7 +124,7 @@ const Page1 = () => {
         <h1 style={{ color: '#fff' }} >Content</h1>
       </section>
 
-      <Contact heightOnPage={heightOnPage[2]} />
+      <Contact heightOnPage={heightOnPage[1] - 300} />
     </>
   );
 };

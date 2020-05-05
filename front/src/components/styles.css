@@ -309,6 +309,12 @@ div.contact-form-group {
   section.partners-container {
     padding-top: 50%;
   }
+
+  img.carousel-itemImg {
+    padding-top: 0px;
+    min-height: 250px;
+    height: 600px;
+}
 }
 
 /* Small devices (landscape phones, 576px and up) ****************/

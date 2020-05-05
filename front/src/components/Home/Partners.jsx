@@ -9,6 +9,7 @@ import Slider from "react-slick";
 const Partners = () => {
   const [isMobile, setIsMobile] = useState(false);
 
+  // If browser is mobile
   useEffect(() => {
     function tipeAccessBrowse() {
       let check = false;

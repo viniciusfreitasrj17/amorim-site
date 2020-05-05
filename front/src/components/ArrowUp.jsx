@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { Link } from 'react-scroll';
-import imgSrc from '../images/arrowUp/aaaU.png';
 import { BsChevronDoubleUp } from 'react-icons/bs';
 
 import './styles.css'
