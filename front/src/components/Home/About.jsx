@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const About = () => {
+const About = ({ heightOnPage }) => {
+  const [lastYPod, setLastYPos] = useState(0);
+
+  useEffect(() => {
+    function Hand() {
+      const a = window.scrollY
+      setLastYPos(a)
+    }
+    window.addEventListener("scroll", Hand, false);
+
+    const $about = document.querySelectorAll('.about-divContainer')[0]
+    window.addEventListener('scroll', hiddenItem, false)
+    function hiddenItem() {
+      if (window.scrollY > heightOnPage) {
+        $about.classList.remove('notAnim');
+        $about.classList.add('Anim');
+      } 
+      else if (window.scrollY <= heightOnPage) {
+        $about.classList.remove('Anim');
+        $about.classList.add('notAnim');
+      } 
+    }
+
+    return () => {
+      window.removeEventListener("scroll", Hand, false);
+    };
+
+  }, [lastYPod])
+
   return (
     <section className='about-container vh-100' id='about'>
-      <div className='container'>
+      <div className='container about-divContainer notAnim'>
         <div className='row'>
           <h1 className='col-md-5'>
             Sobre ...

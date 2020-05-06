@@ -20,7 +20,7 @@ const Services = () => {
           <button className='services-link-img' onClick={() => hashHistory.push('/page1')} >
             <div className="card service-card-big" >
               <img className="card-img-top" src={imgSrc.get(1)} alt="Card image cap" />
-              <div className="card-body">
+              <div className="card-body services-card-body">
                 <p className="card-text">Title</p>
               </div>
             </div>
@@ -34,7 +34,7 @@ const Services = () => {
                 {/* <img className='services-img-small' src={imgSrc.get(2)} /> */}
                 <div className="card service-card-small" >
                   <img className="card-img-top services-img-small" src={imgSrc.get(2)} alt="Card image cap" />
-                  <div className="card-body">
+                  <div className="card-body services-card-body">
                     <p className="card-text">Title</p>
                   </div>
                 </div>
@@ -45,7 +45,7 @@ const Services = () => {
                 {/* <img className='services-img-small' src={imgSrc.get(3)} /> */}
                 <div className="card service-card-small" >
                   <img className="card-img-top services-img-small" src={imgSrc.get(3)} alt="Card image cap" />
-                  <div className="card-body">
+                  <div className="card-body services-card-body">
                     <p className="card-text">Title</p>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ const Services = () => {
                 {/* <img className='services-img-small' src={imgSrc.get(4)} /> */}
                 <div className="card service-card-small" >
                   <img className="card-img-top services-img-small" src={imgSrc.get(4)} alt="Card image cap" />
-                  <div className="card-body">
+                  <div className="card-body services-card-body">
                     <p className="card-text">Title</p>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ const Services = () => {
                 {/* <img className='services-img-small' src={More} /> */}
                 <div className="card service-card-small" >
                   <img className="card-img-top services-img-small" src={More} alt="Card image cap" />
-                  <div className="card-body">
+                  <div className="card-body services-card-body">
                     <p className="card-text">Title</p>
                   </div>
                 </div>

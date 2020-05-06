@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { NavContainer, Logo, Toggle, NavItens, Item, Ghost } from '../components/NavBar';
+import { NavContainer, Logo, Toggle, NavItens, Item } from '../components/NavBar';
+import Intro from '../components/Pages/Intro';
+import Content from '../components/Pages/Content';
 import Contact from '../components/Home/Contact';
 
 const Page3 = () => {
@@ -8,13 +10,14 @@ const Page3 = () => {
   const [heightOnPage, setHeightOnPage] = useState([]);
   const [active, setActive] = useState('');
 
-  const c = ['navbar', 'intro', 'content', 'contact'];
+  const c = ['carousel', 'content', 'contact'];
 
+  // To top
   useEffect(() => {
     return window.scrollTo(0, 0)
   }, [])
 
-  // useEffect get height components
+  // Get height components
   useEffect(() => {
     function Hand() {
       const a = window.scrollY
@@ -41,14 +44,14 @@ const Page3 = () => {
     };
   }, [lastYPod])
 
-  // useEffect NavBar
+  // NavBar
   useEffect(() => {
 
     // Effect Size
     const $nav = document.querySelector('nav')
     const $logo = document.querySelectorAll('.navbar-logo')[0]
     const $toggler = document.querySelectorAll('.navbar-toggler')[0]
-    const $group = document.querySelectorAll('.navbar-group-itens')[0]  
+    const $group = document.querySelectorAll('.navbar-group-itens')[0]
     window.addEventListener('scroll', toggleNav, false)
     function toggleNav() {
       if (window.pageYOffset > 98 && $nav.classList.contains('max-navbar')) {
@@ -75,9 +78,11 @@ const Page3 = () => {
     }
 
     // Effect Link Active
+    setActive(c[0])
+
     function activeNav() {
       heightOnPage.forEach((e, i) => {
-        if(window.scrollY > e) {
+        if (window.scrollY > (e-300)) {
           setActive(c[i + 1])
         }
       })
@@ -92,22 +97,17 @@ const Page3 = () => {
         <Logo content={'Amorim'} />
         <Toggle />
         <NavItens>
-          <Item to={'navbar'} content={'Início'} active={active} />
+          <Item to={'carousel'} content={'Início'} active={active} />
           <Item to={'content'} content={'Galeria'} active={active} />
           <Item to={'contact'} content={'Contato'} active={active} />
         </NavItens>
       </NavContainer>
-      <Ghost />
 
-      <section id='intro' style={{height: '370px'}} >
-        <h1 style={{color: '#fff'}} >Intro</h1>
-      </section>
+      <Intro />
 
-      <section id='content' style={{height: '800px'}} >
-        <h1 style={{color: '#fff'}} >Content</h1>
-      </section>
+      <Content />
 
-      <Contact heightOnPage={heightOnPage[2]} />
+      <Contact heightOnPage={heightOnPage[1] - 300} />
     </>
   );
 };

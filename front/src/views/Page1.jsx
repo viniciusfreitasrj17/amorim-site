@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { NavContainer, Logo, Toggle, NavItens, Item, Ghost } from '../components/NavBar';
+import { NavContainer, Logo, Toggle, NavItens, Item } from '../components/NavBar';
+import Intro from '../components/Pages/Intro';
+import Content from '../components/Pages/Content';
 import Contact from '../components/Home/Contact';
 
 const Page1 = () => {
@@ -10,11 +12,12 @@ const Page1 = () => {
 
   const c = ['carousel', 'content', 'contact'];
 
+  // To top
   useEffect(() => {
     return window.scrollTo(0, 0)
   }, [])
 
-  // useEffect get height components
+  // Get height components
   useEffect(() => {
     function Hand() {
       const a = window.scrollY
@@ -41,7 +44,7 @@ const Page1 = () => {
     };
   }, [lastYPod])
 
-  // useEffect NavBar
+  // NavBar
   useEffect(() => {
 
     // Effect Size
@@ -100,29 +103,9 @@ const Page1 = () => {
         </NavItens>
       </NavContainer>
 
-      <section id='carousel' style={{ width: '100%' }} >
-        <div className="" style={{
-              height: '30rem', 
-              width: '100%', 
-              backgroundImage: 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3ZkLvg2p-eOyJvNi1y9z0Btj4dma-RJKDGSEtEcv7btt7uASu&usqp=CAU")',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              opacity: .7,
+      <Intro />
 
-              display: 'flex',
-              alignItems: 'flex-end',
-              justifyContent: 'center',
-              paddingBottom: '2%'
-            }}>
-            <h5 style={{color: '#fff'}}>...</h5>
-            <h5 style={{color: '#fff'}}>...</h5>
-        </div>
-      </section>
-
-      <section id='content' style={{ height: '800px' }} >
-        <h1 style={{ color: '#fff' }} >Content</h1>
-      </section>
+      <Content />
 
       <Contact heightOnPage={heightOnPage[1] - 300} />
     </>

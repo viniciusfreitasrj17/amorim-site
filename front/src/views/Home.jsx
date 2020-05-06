@@ -107,8 +107,8 @@ const Home = () => {
       </NavContainer>
       <Carousel />
       <Services />
-      <Partners />
-      <About />
+      <Partners heightOnPage={heightOnPage[1] - 300} />
+      <About heightOnPage={heightOnPage[2] - 300} />
       <Contact heightOnPage={heightOnPage[3] - 300} />
     </>
   );
