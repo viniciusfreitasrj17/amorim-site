@@ -41,7 +41,7 @@ const ArrowUp = ({init, anim}) => {
         delay={100}
       >
         {/* <img className='arrowUpImg' src={imgSrc} />   */}
-        <BsChevronDoubleUp size={37} color='#000' />
+        <BsChevronDoubleUp size={34} color='#000' />
       </Link>
     </motion.div>
   )

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../styles.css';
 
-import img1 from '../../images/home/amorim1.png';
-import img2 from '../../images/home/amorim2.jpg';
-import img3 from '../../images/home/amorim3.jpg';
-import img4 from '../../images/home/amorim4.jpg';
+import img1 from '../../images/home/amorim1-full.png';
+import img2 from '../../images/home/amorim2-full.png';
+import img3 from '../../images/home/amorim3-full.png';
+import img4 from '../../images/home/amorim4-full.png';
 
 import img1Min from '../../images/home/amorim1-edited.png';
 import img2Min from '../../images/home/amorim2-edited.png';
