@@ -452,7 +452,7 @@ div.contact-form-group {
 /* Extra large devices (large desktops, 1200px and up) ***********/ 
 @media (min-width: 1200px) and (min-height: 500px) {
   section.contact-cont-center {
-    padding: 1% 0;
+    padding-top: 5%;
   }
 
   label.contact-label {

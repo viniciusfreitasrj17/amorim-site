@@ -4,8 +4,9 @@ const About = ({ heightOnPage }) => {
   const [lastYPod, setLastYPos] = useState(0);
   const [a, setA] = useState(0)
 
-  const transition = { transition: 'opacity .7s ease-out' }
+  const transition = { transition: 'opacity .7s ease-out', paddingBottom: '2rem' }
 
+  // Hidden Animate
   useEffect(() => {
     function Hand() {
       const a = window.scrollY
@@ -21,8 +22,7 @@ const About = ({ heightOnPage }) => {
     window.addEventListener('scroll', hiddenItem, false)
     function hiddenItem() {
       if (window.scrollY > heightOnPage && $about.classList.contains('notAnim')) {
-        setA(a + 1)
-        console.log(a)
+        setA(a + 1)        
         if (a === 1) {
           setTimeout(() => {
             $about.classList.remove('notAnim');
@@ -46,9 +46,8 @@ const About = ({ heightOnPage }) => {
           }, 4000)
         }
       }
-      else if (window.scrollY <= heightOnPage && $about.classList.contains('Anim')) {
-        setA(0);
-        console.log(a)
+      else if (window.scrollY <= 1 && $about.classList.contains('Anim')) {
+        setA(0);        
         if (!a) {
           $about.classList.remove('Anim');
           $about.classList.add('notAnim');
