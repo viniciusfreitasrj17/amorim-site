@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const About = ({ heightOnPage }) => {
   const [lastYPod, setLastYPos] = useState(0);
+  const [a, setA] = useState(0)
 
   const transition = { transition: 'opacity .7s ease-out' }
 
@@ -20,38 +21,46 @@ const About = ({ heightOnPage }) => {
     window.addEventListener('scroll', hiddenItem, false)
     function hiddenItem() {
       if (window.scrollY > heightOnPage && $about.classList.contains('notAnim')) {
-        setTimeout(() => {
-          $about.classList.remove('notAnim');
-          $about.classList.add('Anim');
-        }, 100)
-        setTimeout(() => {
-          $tx1.classList.remove('notAnim');
-          $tx1.classList.add('Anim');
-        }, 1000)
-        setTimeout(() => {
-          $tx2.classList.remove('notAnim');
-          $tx2.classList.add('Anim');
-        }, 2000)
-        setTimeout(() => {
-          $tx3.classList.remove('notAnim');
-          $tx3.classList.add('Anim');
-        }, 3000)
-        setTimeout(() => {
-          $tx4.classList.remove('notAnim');
-          $tx4.classList.add('Anim');
-        }, 4000)
+        setA(a + 1)
+        console.log(a)
+        if (a === 1) {
+          setTimeout(() => {
+            $about.classList.remove('notAnim');
+            $about.classList.add('Anim');
+          }, 100)
+          setTimeout(() => {
+            $tx1.classList.remove('notAnim');
+            $tx1.classList.add('Anim');
+          }, 1000)
+          setTimeout(() => {
+            $tx2.classList.remove('notAnim');
+            $tx2.classList.add('Anim');
+          }, 2000)
+          setTimeout(() => {
+            $tx3.classList.remove('notAnim');
+            $tx3.classList.add('Anim');
+          }, 3000)
+          setTimeout(() => {
+            $tx4.classList.remove('notAnim');
+            $tx4.classList.add('Anim');
+          }, 4000)
+        }
       }
       else if (window.scrollY <= heightOnPage && $about.classList.contains('Anim')) {
-        $about.classList.remove('Anim');
-        $about.classList.add('notAnim');
-        $tx1.classList.remove('Anim');
-        $tx1.classList.add('notAnim');
-        $tx2.classList.remove('Anim');
-        $tx2.classList.add('notAnim');
-        $tx3.classList.remove('Anim');
-        $tx3.classList.add('notAnim');
-        $tx4.classList.remove('Anim');
-        $tx4.classList.add('notAnim');
+        setA(0);
+        console.log(a)
+        if (!a) {
+          $about.classList.remove('Anim');
+          $about.classList.add('notAnim');
+          $tx1.classList.remove('Anim');
+          $tx1.classList.add('notAnim');
+          $tx2.classList.remove('Anim');
+          $tx2.classList.add('notAnim');
+          $tx3.classList.remove('Anim');
+          $tx3.classList.add('notAnim');
+          $tx4.classList.remove('Anim');
+          $tx4.classList.add('notAnim');
+        }
       }
     }
 
