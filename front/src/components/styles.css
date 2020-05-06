@@ -1,4 +1,4 @@
-/* Default */
+/* Default and Effects*/
 
 .vh-100{
   height: 100vh;
@@ -237,13 +237,12 @@ h1.partners-title {
 /* About */
 
 section.about-container {
-  margin-top: 50px;
+  /* margin-top: 50px;
+  padding: 70px 0; */
   background-color: #e8e8e8;
-  padding: 70px 0;
-}
-
-div.about-divContainer {
-  transition: opacity .7s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Contact */
