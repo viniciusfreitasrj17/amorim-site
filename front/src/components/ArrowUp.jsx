@@ -32,7 +32,7 @@ const ArrowUp = ({init, anim}) => {
       }}
     > 
       <Link 
-        className='arrowUp' 
+        // className='arrowUp' 
         to="carousel" 
         spy={true} 
         smooth={true} 
@@ -42,7 +42,7 @@ const ArrowUp = ({init, anim}) => {
       >
         {/* <img className='arrowUpImg' src={imgSrc} />   */}
         <BsChevronDoubleUp size={37} color='#000' />
-      </Link>/>
+      </Link>
     </motion.div>
   )
 }
