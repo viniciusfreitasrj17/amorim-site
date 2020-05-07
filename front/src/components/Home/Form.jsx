@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import ReCAPTCHA from "react-google-recaptcha";
+
+const TEST_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+const DELAY = 1500;
 
 const Form = ({ init, anim }) => {
   // useState
@@ -8,6 +12,38 @@ const Form = ({ init, anim }) => {
   const [tel, setTel] = useState('');
   const [message, setMessage] = useState('');
   const [recipientID, setRecipientID] = useState(1);
+
+  ////////////////////////////////////////////////////////////////////////////
+
+  // ReCaptcha
+  const [callback, setCallback] = useState('not fired');
+  const [value, setValue] = useState('[empty]');
+  const [load, setLoad] = useState(false);
+  const [expired, setExpired] = useState('false');
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoad(true);
+    }, DELAY)
+   }, [])
+   
+  const handleChange = value => {
+    console.log("Captcha value:", value);
+    setValue(value);
+    // if value is null recaptcha expired
+    if (value === null) setExpired('true');
+  };
+
+  const asyncScriptOnLoad = () => {
+    setCallback("called!");
+  };
+
+  // console.log({
+  //   'callback': callback,
+  //   'value': value,
+  //   'expired': expired
+  // })
+
 
   ////////////////////////////////////////////////////////////////////////////
 
@@ -34,7 +70,6 @@ const Form = ({ init, anim }) => {
         type: "spring",
         stiffness: 260,
         damping: 20,
-        // scale: { duration: .5 },
         opacity: { duration: .5 }
       }}
     > 
@@ -136,8 +171,34 @@ const Form = ({ init, anim }) => {
             required
           ></textarea>
         </div>
-
-        <button type="submit" className="btn btn-primary">Submit</button>
+        
+        <div 
+          className='row'
+          style={{ 
+            display: 'flex',
+            alignItems: 'center',
+            padding: '.2rem 5rem' //remove in Mobile
+          }}
+        >
+          {load && (
+            <ReCAPTCHA
+              style={{ display: "inline-block" }}
+              className='col-md-8 col-12'
+              theme="dark"
+              sitekey={TEST_SITE_KEY}
+              onChange={handleChange}
+              asyncScriptOnLoad={asyncScriptOnLoad}
+            />
+          )}
+        
+          <button 
+            style={{marginTop: '1rem'}} // add margin: 0 auto; in Mobile
+            type="submit" 
+            className="col-md-3 col-3 btn btn-primary"
+          >
+            Submit
+          </button>
+        </div>
 
       </form>
     </motion.div>
