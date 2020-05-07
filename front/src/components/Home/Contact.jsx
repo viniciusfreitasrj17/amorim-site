@@ -5,7 +5,7 @@ const Contact = ({ heightOnPage }) => {
   const [isAnimated, setIsAnimated] = useState(0);
   const [el, setEl] = useState('');
 
-  // console.log(heightOnPage[4])
+  // console.log(heightOnPage)
 
   useEffect(() => {
     window.addEventListener("scroll", handleElement, false);
