@@ -271,6 +271,16 @@ div.contact-form-group {
   margin-bottom: 0.5rem;
 }
 
+div.contact-container-recaptcha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .2rem 0;
+}
+
+button.contact-buttom {
+  margin-top: 1rem;
+}
 
 /* Rescursive */
 
@@ -301,6 +311,16 @@ div.contact-form-group {
     border-radius: 15px;
     background-color: #4c4646;
     /* padding: 2%; */
+  }
+
+  div.contact-container-recaptcha {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  
+  button.contact-buttom {
+    margin: .5rem auto;
   }
 
   div.service-img-mobile {

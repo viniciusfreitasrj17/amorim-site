@@ -9,7 +9,7 @@ const Contact = ({ heightOnPage }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleElement, false);
-    
+
     function handleElement() {
       // console.log(window.scrollY)
 
@@ -17,7 +17,7 @@ const Contact = ({ heightOnPage }) => {
         setIsAnimated(1);
         // console.log({ True: isAnimated})
         setEl(<Form init={0} anim={1} />)
-      } else if (window.scrollY < heightOnPage && isAnimated == 1) {
+      } else if (window.scrollY < heightOnPage && isAnimated === 1) {
         setIsAnimated(0);
         // console.log({ False: isAnimated})
         setEl(<Form init={1} anim={0} />)
@@ -27,10 +27,19 @@ const Contact = ({ heightOnPage }) => {
       window.removeEventListener("scroll", handleElement, false);
     };
   }, [window.scrollY]);
-  
+
   return (
-    <section className='container contact-container vh-100 contact-cont-center' id='contact'>
+    <section 
+      className='container contact-container vh-100 contact-cont-center' 
+      id='contact'
+    >
       {el}
+      <div
+        className="g-recaptcha col-md-6 col-12"
+        data-theme="dark"
+        style={{ zIndex: '999', marginLeft: '39rem', marginTop: '-9.5rem' }}
+        data-sitekey="--paste your site key here--"
+      ></div>
     </section>
   );
 };
