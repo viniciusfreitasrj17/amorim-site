@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import Recaptcha from 'react-recaptcha-that-works';
 
 const Form = ({ init, anim }) => {
   // useState
@@ -21,8 +22,21 @@ const Form = ({ init, anim }) => {
     { id: 6, name: 'Outros' },
   ];
   ////////////////////////////////////////////////////////////////////////////
+  //ReCaptcha
+
+  const [tok, setTok] = useState('');
+
+  const onVerify = token => {
+    setTok(token);
+    console.log('success!', tok);
+  }
+
+  const onExpire = () => {
+    console.warn('expired!');
+  }
 
 
+  ///////////////////////////////////////////////////////////////////////////
   // Focus
   const inputRef = useRef(null);
 
@@ -148,10 +162,16 @@ const Form = ({ init, anim }) => {
               required
             ></textarea>
           </div>
+          
+          {message && (
+            <Recaptcha
+              className="col-md-6 col-12"
+              siteKey="<your-recaptcha-public-key>"
+              onVerify={onVerify}
+              onExpire={onExpire}
+            />
+          )}
 
-          <div
-            className="col-md-6 col-12"
-          ></div>
 
           <button
             type="submit"
@@ -160,7 +180,7 @@ const Form = ({ init, anim }) => {
             Submit
           </button>
 
-      </div>
+        </div>
       </form>
     </motion.div>
   );

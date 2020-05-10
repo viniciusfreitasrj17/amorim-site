@@ -7,7 +7,7 @@ import Partners from '../components/Home/Partners';
 import About from '../components/Home/About';
 import Contact from '../components/Home/Contact';
 
-import { onScroll, getHeightComponent, navbarEffectSize } from '../util/funcs';
+import { toTop, onScroll, getHeightComponent, navbarEffectSize } from '../util/funcs';
 
 const Home = () => {
   const [lastYPod, setLastYPos] = useState(0);
@@ -15,6 +15,11 @@ const Home = () => {
   const [active, setActive] = useState('');
 
   const c = ['carousel', 'services', 'partners', 'about', 'contact'];
+
+  // To top
+  useEffect(() => 
+    toTop()
+  ,[])
 
   // Get Scroll Y
   useEffect(() => 

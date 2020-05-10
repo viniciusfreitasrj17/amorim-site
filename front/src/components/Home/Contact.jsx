@@ -4,7 +4,7 @@ import Form from './Form';
 const Contact = ({ heightOnPage }) => {
   const [isAnimated, setIsAnimated] = useState(0);
   const [el, setEl] = useState('');
-  const [posit, setPosit] = useState('100rem');
+  // const [posit, setPosit] = useState('100rem');
 
   // console.log(heightOnPage)
 
@@ -18,12 +18,12 @@ const Contact = ({ heightOnPage }) => {
         setIsAnimated(1);
         // console.log({ True: isAnimated})
         setEl(<Form init={0} anim={1} />)
-        setPosit('-9.5rem')
+        // setPosit('-9.5rem')
       } else if (window.scrollY < heightOnPage && isAnimated === 1) {
         setIsAnimated(0);
         // console.log({ False: isAnimated})
         setEl(<Form init={1} anim={0} />)
-        setPosit('100rem')
+        // setPosit('100rem')
       }
     }
     return () => {
@@ -37,12 +37,12 @@ const Contact = ({ heightOnPage }) => {
       id='contact'
     >
       {el}
-      <div
+      {/* <div
         className="g-recaptcha col-md-6 col-12"
         data-theme="dark"
         style={{ zIndex: '999', marginLeft: '39rem', marginTop: posit }}
         data-sitekey="--paste your site key here--"
-      ></div>
+      ></div> */}
     </section>
   );
 };

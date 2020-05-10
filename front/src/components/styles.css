@@ -284,7 +284,7 @@ button.contact-buttom {
 
 /* Content */
 
-.card {
+.content-card {
   width: 45ch;
   height: 40ch;
   background: grey;
@@ -299,7 +299,7 @@ button.contact-buttom {
   margin: 2ch;
 }
 
-.card:hover {
+.content-card:hover {
   box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
 }
 

@@ -42,7 +42,7 @@ const NavItens = ({ children }) => (
     className="collapse navbar-collapse max-navbar-group-itens navbar-group-itens" 
     id="navbarSupportedContent"
   >
-    <ul className="navbar-nav mr-auto navbar-ul-liks">
+    <ul className="navbar-nav ml-auto navbar-ul-liks">
       {children}
     </ul>
   </div>);
