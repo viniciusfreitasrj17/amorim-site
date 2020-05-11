@@ -146,7 +146,11 @@ const Form = ({ init, anim }) => {
         <div
           className='contact-container-recaptcha row'
         >
-          <div className="form-group contact-form-group col-md-6 col-12">
+          <div 
+            className={`form-group contact-form-group ${
+              message ? 'col-md-7' : 'col-md-12'
+            } col-12`}
+          >
             <label
               className='contact-label'
               htmlFor="exampleTextarea"
@@ -165,7 +169,7 @@ const Form = ({ init, anim }) => {
           
           {message && (
             <Recaptcha
-              className="col-md-6 col-12"
+              className="col-md-5 col-12"
               siteKey="<your-recaptcha-public-key>"
               onVerify={onVerify}
               onExpire={onExpire}

@@ -208,7 +208,7 @@ section.partners-container {
   padding-top: 15%;
   height: 100vh;
   /* margin-bottom: 70px; */
-  transition: opacity .7s ease-out;
+  transition: opacity 1.2s ease-out;
 }
 
 h3.partners-itens {
@@ -274,12 +274,12 @@ div.contact-form-group {
 div.contact-container-recaptcha {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: .2rem 0;
 }
 
 button.contact-buttom {
-  margin-top: 1rem;
+  margin: .5rem auto;
 }
 
 /* Content */
