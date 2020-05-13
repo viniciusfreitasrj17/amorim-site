@@ -37,12 +37,6 @@ const Contact = ({ heightOnPage }) => {
       id='contact'
     >
       {el}
-      {/* <div
-        className="g-recaptcha col-md-6 col-12"
-        data-theme="dark"
-        style={{ zIndex: '999', marginLeft: '39rem', marginTop: posit }}
-        data-sitekey="--paste your site key here--"
-      ></div> */}
     </section>
   );
 };

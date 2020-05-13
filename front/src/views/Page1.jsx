@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { NavContainer, Logo, Toggle, NavItens, Item } from '../components/NavBar';
 import Intro from '../components/Pages/Intro';
 import Content from '../components/Pages/Content';
-import Contact from '../components/Home/Contact';
+import Footer from '../components/Pages/Footer';
 
 import { toTop, onScroll, getHeightComponent, navbarEffectSize } from '../util/funcs';
 
@@ -12,7 +12,7 @@ const Page1 = () => {
   const [heightOnPage, setHeightOnPage] = useState([]);
   const [active, setActive] = useState('');
 
-  const c = ['carousel', 'content', 'contact'];
+  const c = ['carousel', 'content', 'footer'];
 
   // To top
   useEffect(() => 
@@ -57,15 +57,15 @@ const Page1 = () => {
         <NavItens>
           <Item to={'carousel'} content={'Início'} active={active} />
           <Item to={'content'} content={'Galeria'} active={active} />
-          <Item to={'contact'} content={'Contato'} active={active} />
+          <Item to={'footer'} content={'Contato'} active={active} />
         </NavItens>
       </NavContainer>
 
       <Intro />
 
-      <Content />
+      <Content heightOnPage={heightOnPage[0] - 300} />
 
-      <Contact heightOnPage={heightOnPage[1] - 300} />
+      <Footer heightOnPage={heightOnPage[1] - 500} />
     </>
   );
 };
