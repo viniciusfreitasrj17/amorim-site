@@ -5,7 +5,6 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { AiOutlineWhatsApp, AiFillYoutube, AiFillLinkedin } from 'react-icons/ai';
 
-
 const Footer = ({ heightOnPage }) => {
   const [lastYPod, setLastYPos] = useState(0);
 

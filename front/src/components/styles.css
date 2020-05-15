@@ -12,6 +12,14 @@
  opacity: 1; 
 }
 
+.notVisibility {
+  visibility: hidden;
+}
+
+.Visibility {
+ visibility: visible; 
+}
+
 /* NavBar */
 
 div.navbar-ghost {
@@ -293,17 +301,18 @@ div.content-container {
   height: 40ch;
   background: grey;
   border-radius: 5px;
-  background-image: url(https://image.flaticon.com/icons/svg/789/789395.svg);
+  /* background-image: url(https://image.flaticon.com/icons/svg/789/789395.svg); */
   background-size: cover;
   background-position: center center;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s;
   will-change: transform;
   border: 5px solid white;
-  margin: 2ch;
+  margin: 4ch;
 }
 
 .content-card:hover {
+  cursor: pointer;
   box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
 }
 
@@ -472,6 +481,76 @@ ul li:hover:nth-child(5) a.footer-group-redes-a:after {
   background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
 }
 
+/* Slide */
+
+section.slide-container {
+  position: fixed;
+  height: 80vh;
+  width: 80vw;
+  top: 5rem;
+  left: 9rem;
+  background-color: #332f2f;
+  /* border-radius: 10px; */
+  z-index: 9;
+  transition: opacity 1.2s 0s ease-out, visibity .3s 2s ease-out;
+}
+
+div.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 2.5s ease-in-out;
+}
+ 
+div.carousel-fade  .carousel-item.active,
+div.carousel-fade  .carousel-item-next.carousel-item-left,
+div.carousel-fade  .carousel-item-prev.carousel-item-right {
+   opacity: 1;
+}
+ 
+div.carousel-fade .active.carousel-item-left,
+div.carousel-fade  .active.carousel-item-right {
+  opacity: 0;
+}
+ 
+div.carousel-fade  .carousel-item-next,
+div.carousel-fade .carousel-item-prev,
+div.carousel-fade .carousel-item.active,
+div.carousel-fade .active.carousel-item-left,
+div.carousel-fade  .active.carousel-item-prev {
+  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
+}
+
+button.slide-buttom-close {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  max-width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 5.5rem;
+  left: 9.5rem;
+  z-index: 9;
+}
+
+.slide-icon-close {
+  font-size: 30px;
+}
+
+div.slide-img-group {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* padding: 10px; */
+  height: 100%;
+}
+
+img.slide-img {
+  /* max-width: 100%; */
+  /* height: 100%; */
+  /* border-radius: 10px; */
+  height: -webkit-fill-available;
+  margin: 0 auto;
+}
 
 /* Rescursive */
 
