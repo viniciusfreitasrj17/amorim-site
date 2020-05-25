@@ -38,7 +38,7 @@ li.navbar-link-a:hover {
 
 nav.navbar-styles {
   position: fixed;
-  z-index: 99;
+  z-index: 9;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -491,8 +491,19 @@ section.slide-container {
   left: 9rem;
   background-color: #332f2f;
   /* border-radius: 10px; */
-  z-index: 9;
+  z-index: 11;
   transition: opacity 1.2s 0s ease-out, visibity .3s 2s ease-out;
+}
+
+div.slide-blackout {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: .7;
+  z-index: 10;
 }
 
 div.carousel-fade .carousel-item {
@@ -529,7 +540,25 @@ button.slide-buttom-close {
   position: fixed;
   top: 5.5rem;
   left: 9.5rem;
-  z-index: 9;
+  z-index: 12;
+}
+
+button.slide-buttom-close:active {
+  color: #f00;
+  border: none;
+}
+
+button.slide-buttom-close:hover {
+  color: #f00;
+  border: none;
+}
+
+button.slide-buttom-close:link {
+  border: none;
+}
+
+button.slide-buttom-close:visited {
+  border: none;
 }
 
 .slide-icon-close {
@@ -542,6 +571,7 @@ div.slide-img-group {
   justify-content: center; */
   /* padding: 10px; */
   height: 100%;
+  /* z-index: 9; */
 }
 
 img.slide-img {

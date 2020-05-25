@@ -1,41 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { IoMdCloseCircle } from 'react-icons/io';
 
-const Slide = ({ active, imgSrc, imgCurrent }) => {
-  // const [close, setClose] = useState(false);
-  const [isAnimated, setAnimated] = useState(active ? true : false);
-  const [a, setA] = useState(0);
-  
+const Slide = ({ actionSlide, imgSrc, imgCurrent }) => { 
   useEffect(() => {
     const $slide = document.querySelectorAll('.slide-container')[0]
     // window.addEventListener('scroll', hiddenItem, false)
-    // console.log(imgCurrent)
+    // console.log(isAnimated)
     function hiddenItem() {
-      if (isAnimated) {
+      // if (isOpen) {
         $slide.classList.remove('notVisibility');
         $slide.classList.add('Visibility');
         $slide.classList.remove('notAnim');
         $slide.classList.add('Anim');
-      } 
-      else if (!isAnimated) {
-        $slide.classList.remove('Anim');
-        $slide.classList.add('notAnim');
-        $slide.classList.remove('Visibility');
-        $slide.classList.add('notVisibility');
-      } 
+      // } 
+      // else if (!isOpen) {
+      //   $slide.classList.remove('Anim');
+      //   $slide.classList.add('notAnim');
+      //   $slide.classList.remove('Visibility');
+      //   $slide.classList.add('notVisibility');
+      // } 
     }
 
-    if(isAnimated) hiddenItem()
-  }, [isAnimated])
+    hiddenItem()
+  }, [])
 
-  function closeSlide() {
-    console.log('1 ', a)
-    setA(1)
-    setTimeout(() => console.log('2 ', a), 2000)
-  }
+  const closeSlide = () => actionSlide();
   
   return (
+    <>
+      <div className="slide-blackout" onClick={closeSlide}></div>
       <section className='slide-container notVisibility notAnim'>
+
         <button className='slide-buttom-close' onClick={closeSlide}>
           <IoMdCloseCircle className='slide-icon-close' />
         </button>
@@ -62,6 +57,7 @@ const Slide = ({ active, imgSrc, imgCurrent }) => {
           </a>
         </div>
       </section>
+    </>
   );
 }
 

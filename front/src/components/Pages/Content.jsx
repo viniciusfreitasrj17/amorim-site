@@ -9,9 +9,10 @@ const Content = ({ heightOnPage }) => {
   const divDefault = { display: 'contents' }
 
   const [lastYPod, setLastYPos] = useState(0);
-  const [isAnimated, setIsAnimated] = useState(false);
-  const [el, setEl] = useState('');
   const [imgCurrent, setImgCurrent] = useState(0);
+  const [isAnimated, setIsAnimated] = useState(false);
+  // const [el, setEl] = useState('');
+  // const [clicked, setClicked] = useState(0);
 
   const imgSrc = [
     ['https://image.flaticon.com/icons/svg/789/789395.svg'],
@@ -53,33 +54,22 @@ const Content = ({ heightOnPage }) => {
   }, [lastYPod])
 
   useEffect(() => {
-    if(isAnimated) {
-      setEl(<Slide active={true} imgSrc={imgSrc} imgCurrent={imgCurrent} />)
-    }
-  }, [isAnimated])
-
-  // function handleSlide(e) {
-  //   e.preventDefault();
-  useEffect(() => {
     const $div = document.querySelectorAll('#content-divImg');
     $div.forEach(element => {
-      element.addEventListener('click', (event) => {
+      element.addEventListener('click', () => {
         setImgCurrent(parseInt(element.getAttribute('data-image')))
-        setIsAnimated(true);
+        
         return; 
       })
     })
-
+    
   }, [])
-
-
-    // console.log($div.getAttribute('data-image'))
-    // console.log($div)
-  // }
+  
+  const actionSlide = () => setIsAnimated(!isAnimated);
 
   return (
     <section id='content' style={{ backgroundColor: '#4c4646' }} >
-      {el}
+      {isAnimated ? <Slide actionSlide={actionSlide} imgSrc={imgSrc} imgCurrent={imgCurrent} /> : null}
       {/* <Slide active={true} />  */}
       <h1 style={{ color: '#fff', textAlign: "center", paddingTop: '5rem' }} >Look us services</h1>
       <div className='container content-container notAnim' >
@@ -92,6 +82,7 @@ const Content = ({ heightOnPage }) => {
               style={divDefault}
               id='content-divImg'
               data-image={index}
+              onClick={actionSlide}
             >
               <Card img={content} />
             </div>
