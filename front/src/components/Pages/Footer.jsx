@@ -16,7 +16,7 @@ const Footer = ({ heightOnPage }) => {
     }
     window.addEventListener("scroll", Hand, false);
 
-    // console.log(lastYPod, heightOnPage)
+    console.log(lastYPod, heightOnPage)
 
     const $part = document.querySelectorAll('.footer-container')[0]
     window.addEventListener('scroll', hiddenItem, false)

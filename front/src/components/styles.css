@@ -502,7 +502,7 @@ div.slide-blackout {
   top: 0;
   left: 0;
   background-color: #000;
-  opacity: .7;
+  opacity: .8;
   z-index: 10;
 }
 
