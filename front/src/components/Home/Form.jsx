@@ -2,24 +2,26 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Recaptcha from 'react-recaptcha-that-works';
 
-const Form = ({ init, anim }) => {
+const Form = ({ init, anim, onSubmit }) => {
   // useState
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [tel, setTel] = useState('');
+  const [recipientID, setRecipientID] = useState(0);
+  const [recip, setRecip] = useState('');
   const [message, setMessage] = useState('');
-  const [recipientID, setRecipientID] = useState(1);
+  const [messageArray, setMessageArray] = useState([]);
 
   ////////////////////////////////////////////////////////////////////////////
 
   // CheckBox
   const optionsList = [
-    { id: 1, name: 'Google' },
-    { id: 2, name: 'Facebook' },
-    { id: 3, name: 'Twitter' },
-    { id: 4, name: 'Instagram' },
-    { id: 5, name: '...' },
-    { id: 6, name: 'Outros' },
+    'Google',
+    'Facebook',
+    'Twitter',
+    'Instagram',
+    '...',
+    'Outros',
   ];
   ////////////////////////////////////////////////////////////////////////////
   //ReCaptcha
@@ -37,12 +39,43 @@ const Form = ({ init, anim }) => {
 
 
   ///////////////////////////////////////////////////////////////////////////
-  // Focus
+  // Focus And Putting recip
   const inputRef = useRef(null);
 
   useEffect(() => {
     inputRef.current.focus();
   }, [])
+  
+  useEffect(() => {
+    setRecip(optionsList[recipientID]);
+
+    setMessageArray(message.split('\n'));
+  }, [recipientID, message])
+
+  ////////////////////////////////////////////////////////////////////////////
+  // Send Mail
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    await onSubmit({
+        name,
+        email,
+        tel,
+        recip,
+        messageArray,
+    }).then(res => {
+        console.log('sucesso', res);
+    }).catch(err => {
+        console.log('error', err);
+    });
+
+    setName('')
+    setEmail('')
+    setTel('')
+    setMessage('')
+    setRecipientID(0)
+}
 
   ////////////////////////////////////////////////////////////////////////////
 
@@ -135,9 +168,9 @@ const Form = ({ init, anim }) => {
             name='options'
             onChange={e => setRecipientID(Number(e.target.value))}
           >
-            {optionsList.map(opt => (
-              <option key={opt.id} value={opt.id}>
-                {opt.name}
+            {optionsList.map((opt, index) => (
+              <option key={index} value={index}>
+                {opt}
               </option>
             ))}
           </select>
@@ -173,6 +206,7 @@ const Form = ({ init, anim }) => {
               siteKey="<your-recaptcha-public-key>"
               onVerify={onVerify}
               onExpire={onExpire}
+              required
             />
           )}
 
@@ -180,6 +214,7 @@ const Form = ({ init, anim }) => {
           <button
             type="submit"
             className="col-md-3 col-3 btn btn-primary contact-buttom"
+            onClick={handleSubmit}
           >
             Submit
           </button>

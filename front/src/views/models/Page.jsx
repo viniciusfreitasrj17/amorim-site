@@ -5,6 +5,9 @@ import Intro from '../../components/Pages/Intro';
 import Content from '../../components/Pages/Content';
 import Footer from '../../components/Pages/Footer';
 
+import LogoImg from '../../images/g12.png';
+
+
 import { toTop, onScroll, getHeightComponent, navbarEffectSize } from '../../util/funcs';
 
 const Page = () => {
@@ -50,7 +53,7 @@ const Page = () => {
   return (
     <>
       <NavContainer>
-        <Logo content={'Amorim'} />
+        <Logo content={'Amorim'} img={LogoImg} />
         <Toggle />
         <NavItens>
           <Item to={'carousel'} content={'Início'} active={active} />

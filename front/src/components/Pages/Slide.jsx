@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { IoMdCloseCircle } from 'react-icons/io';
 
 const Slide = ({ actionSlide, imgSrc, imgCurrent }) => { 
@@ -40,10 +40,9 @@ const Slide = ({ actionSlide, imgSrc, imgCurrent }) => {
             {imgSrc.map((content, index) => (
               <div 
                 key={index} 
-                className={`carousel-item ${(imgCurrent === index) ? 'active' : ''}`}
-              >
-                <img className="d-block slide-img" src={content} alt="..." />
-              </div>
+                className={`carousel-item slide-img ${(imgCurrent === index) ? 'active' : ''}`}
+                style={{ backgroundImage: `url('${content}')` }}
+              ></div>
             ))}
           </div>
           

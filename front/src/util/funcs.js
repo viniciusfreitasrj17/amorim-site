@@ -34,6 +34,7 @@ const getHeightComponent = (component, state, setState) => {
 const navbarEffectSize = () => {
   const $nav = document.querySelector('nav')
   const $logo = document.querySelectorAll('.navbar-logo')[0]
+  const $logoImg = document.querySelectorAll('.navbar-imglogo')[0]
   const $toggler = document.querySelectorAll('.navbar-toggler')[0]
   const $group = document.querySelectorAll('.navbar-group-itens')[0]
   window.addEventListener('scroll', toggleNav, false)
@@ -42,6 +43,8 @@ const navbarEffectSize = () => {
       $nav.classList.remove('max-navbar')
       $nav.classList.add('min-navbar')
       // $logo.firstElementChild.setAttribute('src', 'imgs/omnitech-logo-2.png')
+      $logoImg.classList.remove('max-navbar-imglogo')
+      $logoImg.classList.add('min-navbar-imglogo')
       $logo.classList.remove('max-navbar-logo')
       $logo.classList.add('min-navbar-logo')
       $toggler.classList.remove('max-navbar-toggler')
@@ -54,6 +57,8 @@ const navbarEffectSize = () => {
       // $logo.firstElementChild.setAttribute('src', 'imgs/omnitech-logo-1.png')
       $logo.classList.remove('min-navbar-logo')
       $logo.classList.add('max-navbar-logo')
+      $logoImg.classList.remove('min-navbar-imglogo')
+      $logoImg.classList.add('max-navbar-imglogo')
       $toggler.classList.add('max-navbar-toggler')
       $toggler.classList.remove('min-navbar-toggler')
       $group.classList.add('max-navbar-group-itens')

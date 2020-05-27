@@ -16,8 +16,7 @@ const ArrowUp = ({init, anim}) => {
         transition: { duration: 0.5 }
       }}
       whileTap={{
-        scale: 1,
-        borderRadius: "100%"
+        scale: 1
       }}
       animate={{
         scale: anim,

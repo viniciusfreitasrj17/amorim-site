@@ -7,7 +7,10 @@ import Partners from '../components/Home/Partners';
 import About from '../components/Home/About';
 import Contact from '../components/Home/Contact';
 
+import LogoImg from '../images/g12.png';
+
 import { toTop, onScroll, getHeightComponent, navbarEffectSize } from '../util/funcs';
+import { apiMail }  from '../services/api';
 
 const Home = () => {
   const [lastYPod, setLastYPos] = useState(0);
@@ -51,10 +54,18 @@ const Home = () => {
     activeNav()
   }, [lastYPod])
 
+  async function handleSubmit(d) {
+    const { data } = await apiMail.post('/send-email', d)
+    
+    console.log(data)
+    // setProd([...prod, data])
+    // setLoad(load + 1)
+  }
+
   return (
     <>
       <NavContainer>
-        <Logo content={'Amorim'} />
+        <Logo content={'Amorim'} img={LogoImg} />
         <Toggle />
         <NavItens>
           <Item to={'carousel'} content={'Início'} active={active} />
@@ -68,7 +79,7 @@ const Home = () => {
       <Services />
       <Partners heightOnPage={heightOnPage[1] - 300} />
       <About heightOnPage={heightOnPage[2] - 300} />
-      <Contact heightOnPage={heightOnPage[3] - 300} />
+      <Contact heightOnPage={heightOnPage[3] - 300} onSubmit={handleSubmit} />
     </>
   );
 }

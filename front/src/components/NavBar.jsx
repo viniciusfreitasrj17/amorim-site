@@ -13,12 +13,13 @@ const NavContainer = ({ children }) => (
   </nav>
 );
 
-const Logo = ({ content }) => (
+const Logo = ({ content, img }) => (
   <a 
     className="navbar-brand max-navbar-logo navbar-logo" 
     onClick={() => hashHistory.push('/')} 
     style={{cursor: 'pointer'}} 
   >
+    {img && <img src={img} className='max-navbar-imglogo navbar-imglogo' />}
     {content}
   </a>
 );
@@ -51,7 +52,7 @@ const Item = ({ to, content, active }) => {
   const [activeArea, setActiveArea] = useState('');
 
   useEffect(() => {
-    setActiveArea((active === to) ? 'active' : '')
+    setActiveArea(active === to && 'active')
   }, [window.scrollY])
   
   return (

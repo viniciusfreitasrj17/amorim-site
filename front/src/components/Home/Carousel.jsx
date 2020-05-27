@@ -45,37 +45,37 @@ const Carousel = () => {
             <div className="carousel-inner">
                 <div className="carousel-item active" data-interval={state.imgInterval} >
                     <img src={!isMobile ? state.imgSrc[0] : state.imgSrc[4]} className="d-block w-100 carousel-itemImg" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
+                    <div className="carousel-caption d-none d-md-block carousel-caption-conteiner">
+                        <h5 style={{ fontSize: '3rem' }}> {`You can dream`} </h5>
+                        <p> {`You can fly   `} </p>
                     </div>
                 </div>
                 <div className="carousel-item" data-interval={state.imgInterval} >
                     <img src={!isMobile ? state.imgSrc[1] : state.imgSrc[5]} className="d-block w-100 carousel-itemImg" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
+                    <div className="carousel-caption d-none d-md-block carousel-caption-conteiner">
+                        <h5 style={{ fontSize: '3rem' }}> {`You can dream`} </h5>
+                        <p> {`You can fly   `} </p>
                     </div>
                 </div>
                 <div className="carousel-item" data-interval={state.imgInterval} >
                     <img src={!isMobile ? state.imgSrc[2] : state.imgSrc[6]} className="d-block w-100 carousel-itemImg" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
+                    <div className="carousel-caption d-none d-md-block carousel-caption-conteiner">
+                        <h5 style={{ fontSize: '3rem' }}> {`You can dream`} </h5>
+                        <p> {`You can fly   `} </p>
                     </div>
                 </div>
                 <div className="carousel-item" data-interval={state.imgInterval} >
                     <img src={!isMobile ? state.imgSrc[3] : state.imgSrc[7]} className="d-block w-100 carousel-itemImg" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
+                    <div className="carousel-caption d-none d-md-block carousel-caption-conteiner">
+                        <h5 style={{ fontSize: '3rem' }}> {`You can dream`} </h5>
+                        <p> {`You can fly   `} </p>
                     </div>
                 </div>
                 <div className="carousel-item" data-interval={state.imgInterval} >
                     <img src={!isMobile ? state.imgSrc[2] : state.imgSrc[6]} className="d-block w-100 carousel-itemImg" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>...</h5>
-                        <p>...</p>
+                    <div className="carousel-caption d-none d-md-block carousel-caption-conteiner">
+                        <h5 style={{ fontSize: '3rem' }}> {`You can dream`} </h5>
+                        <p> {`You can fly   `} </p>
                     </div>
                 </div>
             </div>

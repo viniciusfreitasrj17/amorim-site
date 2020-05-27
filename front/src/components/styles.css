@@ -72,6 +72,21 @@ a.max-navbar-logo {
   margin-left: 5%;
 }
 
+img.navbar-imglogo {
+  padding: .5rem;
+  transition: all 0.25s ease-out;
+}
+
+img.max-navbar-imglogo {
+  width: 4rem;
+  height: 4rem;
+}
+
+img.min-navbar-imglogo {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 button.navbar-toggler {
   transition: all 0.25s ease-out;
 }
@@ -117,11 +132,17 @@ div.max-navbar-group-itens {
 /* Carousel */
 img.carousel-itemImg {
     padding-top: 0px;
-    /* max-height: 100%;
-    min-height: 100%; */
     min-height: 250px;
     height: 100%;
-    /* max-width: 100%; */
+    opacity: .8;
+}
+
+div.carousel-caption-conteiner {
+  margin: 30% 0;
+  padding-right: 58rem;
+  font-size: 2rem;
+  width: 100%;
+  z-index: 8;
 }
 
 /* Services */
@@ -288,6 +309,23 @@ div.contact-container-recaptcha {
 
 button.contact-buttom {
   margin: .5rem auto;
+}
+
+/* Intro */
+
+div.intro-background {
+  height: 30rem;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: .7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 45rem
 }
 
 /* Content */
@@ -566,20 +604,14 @@ button.slide-buttom-close:visited {
 }
 
 div.slide-img-group {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* padding: 10px; */
   height: 100%;
-  /* z-index: 9; */
 }
 
-img.slide-img {
-  /* max-width: 100%; */
-  /* height: 100%; */
-  /* border-radius: 10px; */
-  height: -webkit-fill-available;
-  margin: 0 auto;
+div.slide-img {
+  height: inherit;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Rescursive */
@@ -664,6 +696,41 @@ img.slide-img {
   color: #FFF;
   padding: 2rem;
   font-size: 16px;
+  }
+
+  li.footer-group-redes-li {
+    list-style: none;
+    margin: 0 5px;
+  }
+
+  .content-card {
+    width: 45ch;
+    height: 40ch;
+    background: grey;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.5s;
+    will-change: transform;
+    border: 5px solid white;
+    margin: 1ch;
+  }
+
+  div.intro-background {
+    height: 30rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: .7;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 5rem;
+    padding-left: 1rem;
   }
 
 }
