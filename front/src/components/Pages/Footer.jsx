@@ -41,11 +41,11 @@ const Footer = ({ heightOnPage }) => {
     <section id='footer' className='footer-container container notAnim'>
       <div className='row'>
         <div className="col-md-6 row">
-          <div className="col-md-6">
+          <div className="col-md-6 col-6">
             <h3 className='footer-group-title' >Página Inicial</h3>
             <a className='footer-link-a' onClick={() => hashHistory.push('/')} ><MdKeyboardArrowRight size={25} /> Home</a>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 col-6">
             <h3 className='footer-group-title' >Serviços</h3>
             <div className="footer-group-link">
               <a className='footer-link-a' onClick={() => hashHistory.push('/page1')} ><MdKeyboardArrowRight size={25} /> Page 1</a>

@@ -74,32 +74,32 @@ const About = ({ heightOnPage }) => {
       <div className='container'>
         <div className='row'>
           <h1 
-            className='about-text notAnim col-md-5'
+            className='about-text notAnim col-md-5 about-title'
             style={transition}
           >
             Sobre ...
           </h1>
           <div className='col-md-7'>
-            <h4 className='text1 notAnim' style={transition} >
+            <h4 className='text1 notAnim about-text-content' style={transition} >
               Lorem ipsum dolor sit amet,
               consectetur adipiscing elit,
               sed do eiusmod tempor incididunt
               ut labore et dolore magna aliqua.
             </h4>
 
-            <h4 className='text2 notAnim' style={transition} >
+            <h4 className='text2 notAnim about-text-content' style={transition} >
               Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut
               aliquip ex ea commodo consequat.
             </h4>
 
-            <h4 className='text3 notAnim' style={transition} >
+            <h4 className='text3 notAnim about-text-content' style={transition} >
               Duis aute irure dolor in reprehenderit
               in voluptate velit esse cillum dolore
               eu fugiat nulla pariatur.
             </h4>
 
-            <h4 className='text4 notAnim' style={transition} >
+            <h4 className='text4 notAnim about-text-content' style={transition} >
               Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim
               id est laborum.
