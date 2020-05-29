@@ -4,6 +4,8 @@ const mailer = require('nodemailer')
 const cors = require('cors')
 
 const sender = "teste-mailer@vinicius17-node.meu-br.com";
+const password = ""; 			// Delete password before make commit
+let message;
 
 const transporter = mailer.createTransport({
 	host: "h37.servidorhh.com",
@@ -11,7 +13,7 @@ const transporter = mailer.createTransport({
 	secure: true,
 	auth: {
 		user: sender,
-		pass: ""
+		pass: password
 	}
 })
 
@@ -22,7 +24,7 @@ app.use(bodyParser.json())
 app.post('/send-email', (req, res) => {
 	const mWithEnter = req.body.messageArray;
 	mWithEnter.unshift(' \n');
-	const message = mWithEnter.join('\n');
+	const Message = mWithEnter.join('\n');
 
 	const messageFormat = `
 	Name: ${req.body.name}
@@ -32,7 +34,7 @@ app.post('/send-email', (req, res) => {
 
 
 
-	Message: ${message}
+	Message: ${Message}
 	`;
 	const email = {
 		from: sender,
@@ -40,7 +42,13 @@ app.post('/send-email', (req, res) => {
 		subject: 'Mensagem site Amorim',
 		text: messageFormat
 	}
-	transporter.sendMail(email)
+
+	if(password) {
+		transporter.sendMail(email)
+		message = 'Enviado !';
+	} else {
+		message = 'Not found password...';
+	}
 	/* For Dev
 	transporter.sendMail(email, (req, res) => {
 		if (error) {
@@ -49,7 +57,7 @@ app.post('/send-email', (req, res) => {
 		return res.status(200).send('Enviado')
 		
 	}) */
-	return res.status(200).send('Enviado')
+	return res.status(200).send(message)
 })
 
 app.listen(4000, console.log('Listen on 4000'))

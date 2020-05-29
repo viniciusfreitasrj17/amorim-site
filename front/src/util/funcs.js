@@ -1,5 +1,8 @@
-const toTop = () => {
-  return window.scrollTo(0, 0)
+const toTop = (effect) => {
+  return window.scrollTo({
+      top: 0,
+      behavior: effect ? 'smooth' : 'auto'
+    })
 }
 
 const onScroll = (state, setState) => {

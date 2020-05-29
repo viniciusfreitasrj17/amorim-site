@@ -57,6 +57,7 @@ const Content = ({ heightOnPage }) => {
 
   }, [lastYPod])
 
+  // Get Image Slide
   useEffect(() => {
     const $div = document.querySelectorAll('#content-divImg');
     $div.forEach(element => {
@@ -73,8 +74,7 @@ const Content = ({ heightOnPage }) => {
 
   return (
     <section id='content' style={{ backgroundColor: '#4c4646' }} >
-      {isAnimated ? <Slide actionSlide={actionSlide} imgSrc={imgSrc} imgCurrent={imgCurrent} /> : null}
-      {/* <Slide active={true} />  */}
+      {isAnimated && <Slide actionSlide={actionSlide} imgSrc={imgSrc} imgCurrent={imgCurrent} /> }
       <h1 style={{ color: '#fff', textAlign: "center", paddingTop: '5rem' }} >Look us services</h1>
       <div className='container content-container notAnim' >
         <div className='col-md-12 row' style={{ justifyContent: 'center' }}>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Recaptcha from 'react-recaptcha-that-works';
+import { RiEmotionHappyLine, RiEmotionUnhappyLine } from 'react-icons/ri';
 
 const Form = ({ init, anim, onSubmit }) => {
   // useState
@@ -11,6 +12,7 @@ const Form = ({ init, anim, onSubmit }) => {
   const [recip, setRecip] = useState('');
   const [message, setMessage] = useState('');
   const [messageArray, setMessageArray] = useState([]);
+  const [sucessSend, setSucessSend] = useState(false);
 
   ////////////////////////////////////////////////////////////////////////////
 
@@ -65,17 +67,31 @@ const Form = ({ init, anim, onSubmit }) => {
         recip,
         messageArray,
     }).then(res => {
-        console.log('sucesso', res);
+        setSucessSend(true);
     }).catch(err => {
-        console.log('error', err);
+        setSucessSend(false);
     });
 
-    setName('')
-    setEmail('')
-    setTel('')
-    setMessage('')
-    setRecipientID(0)
-}
+    setName('');
+    setEmail('');
+    setTel('');
+    setMessage('');
+    setRecipientID(0);
+  }
+
+  ////////////////////////////////////////////////////////////////////////////
+
+  useEffect(() => {
+    const $btn = document.querySelectorAll('.contact-buttom')[0]
+
+    if(message) {
+      $btn.setAttribute('data-toggle', 'modal')
+      $btn.setAttribute('data-target', '#exampleModal')
+    } else {
+      $btn.removeAttribute('data-toggle')
+      $btn.removeAttribute('data-target')
+    }
+  }, [message])
 
   ////////////////////////////////////////////////////////////////////////////
 
@@ -93,7 +109,7 @@ const Form = ({ init, anim, onSubmit }) => {
         opacity: { duration: .5 }
       }}
     >
-      <form className='col-11 col-md-8 col-xl-9 contact-form'>
+      <form className='col-11 col-md-8 col-xl-9 contact-form' onSubmit={handleSubmit}>
 
         <h1 className='contact-title'>Entre em Contato Conosco</h1>
 
@@ -214,12 +230,45 @@ const Form = ({ init, anim, onSubmit }) => {
           <button
             type="submit"
             className="col-md-3 col-3 btn btn-primary contact-buttom"
-            onClick={handleSubmit}
           >
             Submit
           </button>
-
         </div>
+
+        <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header" style={{justifyContent: 'center', alignContent: 'center'}}>
+                <h5 className="modal-title" id="exampleModalLabel">Mensagem</h5>
+              </div>
+              {
+              sucessSend ? (
+                  <div className="modal-body" style={{margin: '0 auto'}}>
+                    <p style={{textAlign: 'center', fontSize: '20px'}}>
+                      <RiEmotionHappyLine style={{color: '#28f70b', fontSize: '3rem', margin: '.5rem'}} /> 
+                      Mensagem enviada com sucesso!
+                    </p>
+
+                    <p style={{textAlign: 'center', fontSize: '20px'}}>Obrigado.</p>
+                  </div>
+                ) : (
+                  <div className="modal-body" style={{margin: '0 auto'}}>
+                    <p style={{textAlign: 'center', fontSize: '20px'}}>
+                      <RiEmotionUnhappyLine style={{color: '#f00', fontSize: '3rem', margin: '.5rem'}} /> 
+                      Mensagem não foi enviada :(
+                    </p>
+
+                    <p style={{textAlign: 'center', fontSize: '20px'}}>Tente enviar mais tarde.</p>
+                  </div>
+                )
+              }
+              <div className="modal-footer" style={{justifyContent: 'center', alignContent: 'center'}}>
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </form>
     </motion.div>
   );
